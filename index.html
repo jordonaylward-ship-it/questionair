@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FBF7F2">
+<title>A few questions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF7F2; --card:#FFFFFF; --ink:#3A3542; --muted:#8A8496; --line:#EDE6DC;
+  --lilac:#C9B8F0; --blush:#F5C3D4; --peach:#F8CDA8; --mint:#BFE6D2;
+  --lilac-soft:#F0EAFB; --blush-soft:#FCEDF3; --peach-soft:#FDF0E2; --mint-soft:#E9F7F0;
+  --grad:linear-gradient(90deg,#C9B8F0 0%,#F5C3D4 50%,#F8CDA8 100%);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--paper);color:var(--ink);font-family:"Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.shell{display:flex;justify-content:center;padding:0 20px}
+.main{width:100%;max-width:680px;padding:20px 0 140px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 18px}
+.logo{font-family:"Sora",sans-serif;font-weight:700;font-size:clamp(15px,4vw,19px);letter-spacing:-0.4px;white-space:nowrap}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.who{font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.thread{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-bottom:8px}
+.thread i{display:block;height:100%;background:var(--grad);border-radius:99px;width:0%;transition:width .35s ease}
+.crumb{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 26px;box-shadow:0 6px 24px rgba(58,53,66,.05)}
+.sticker{display:inline-flex;align-items:center;gap:8px;font-family:"Sora",sans-serif;font-weight:700;font-size:13px;padding:6px 14px;border-radius:99px;margin-bottom:16px;color:var(--ink)}
+.sticker.lilac{background:var(--lilac-soft)}
+.sticker.blush{background:var(--blush-soft)}
+.sticker.peach{background:var(--peach-soft)}
+.sticker.mint{background:var(--mint-soft)}
+.sticker b{font-size:15px}
+h1{font-family:"Sora",sans-serif;font-weight:600;font-size:clamp(21px,4.5vw,27px);letter-spacing:-0.4px;line-height:1.3;margin-bottom:6px}
+h2{font-family:"Sora",sans-serif;font-weight:600;font-size:17px;margin:22px 0 10px}
+.hint{font-size:14px;color:var(--muted);margin-bottom:22px}
+.body p{margin-bottom:14px}
+.body p:last-child{margin-bottom:0}
+.facts{list-style:none;margin:6px 0 20px}
+.facts li{position:relative;padding:9px 0 9px 26px;border-bottom:1px solid var(--line);font-size:15px}
+.facts li:last-child{border-bottom:none}
+.facts li:before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--lilac)}
+.facts b{font-weight:700}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+@media(max-width:560px){.chips{grid-template-columns:1fr}}
+.chip{display:flex;align-items:flex-start;gap:10px;font-family:"Karla",sans-serif;font-size:15px;font-weight:500;color:var(--ink);text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;transition:transform .12s ease,background .12s ease,border-color .12s ease}
+.chip .letter{flex:none;width:22px;height:22px;border-radius:50%;margin-top:1px;display:inline-flex;align-items:center;justify-content:center;font-family:"Sora",sans-serif;font-weight:700;font-size:11px;background:#fff;border:1.5px solid var(--line);color:var(--muted)}
+.chip:hover{transform:translateY(-1px);border-color:#D8CFE9}
+.chip:focus-visible{outline:3px solid var(--lilac);outline-offset:2px}
+.chip.on{border-color:transparent;font-weight:700}
+.chip.on .letter{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip.on.c-lilac{background:var(--lilac)}
+.chip.on.c-blush{background:var(--blush)}
+.chip.on.c-peach{background:var(--peach)}
+.chip.on.c-mint{background:var(--mint)}
+label.small{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:7px;letter-spacing:.3px}
+textarea,input[type=text],input[type=email],input[type=tel],select{width:100%;font-family:"Karla",sans-serif;font-size:15px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:12px 15px;resize:vertical}
+textarea{min-height:74px}
+textarea:focus,input:focus,select:focus{outline:none;border-color:var(--lilac);background:#fff}
+input[type=text],input[type=email],input[type=tel],select{margin-bottom:16px}
+.tidybar{display:flex;gap:8px;align-items:center;margin-top:8px}
+.tidybtn{font-family:"Sora",sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.2px;border:1.5px solid var(--line);background:var(--paper);color:var(--muted);border-radius:10px;padding:7px 13px;cursor:pointer;transition:all .15s}
+.tidybtn:hover{border-color:var(--lilac);color:var(--ink);background:#fff}
+.tidybtn.ghost{opacity:.75}
+.nav{position:fixed;left:0;right:0;bottom:0;background:rgba(251,247,242,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);z-index:20}
+.nav .in{max-width:680px;margin:0 auto;display:flex;gap:12px;padding:14px 20px}
+.btn{font-family:"Sora",sans-serif;font-weight:600;font-size:15px;border:none;border-radius:14px;padding:14px 22px;cursor:pointer;transition:transform .12s ease,opacity .12s ease}
+.btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.45;cursor:default}
+.btn.primary{background:var(--ink);color:#fff;flex:1}
+.btn.ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
+.btn.big{width:100%;padding:16px}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(14px);background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:11px 20px;border-radius:99px;opacity:0;pointer-events:none;transition:all .25s ease;z-index:60}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.review{list-style:none}
+.review li{padding:14px 0;border-bottom:1px solid var(--line)}
+.review li:last-child{border-bottom:none}
+.review .q{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:4px}
+.review .a{font-size:15px}
+.review .a em{color:var(--muted);font-style:normal}
+.codebox{width:100%;min-height:130px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+.big-tick{width:64px;height:64px;border-radius:50%;background:var(--mint-soft);display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:18px}
+.err{background:var(--blush-soft);border-radius:14px;padding:14px 16px;font-size:14px;margin-bottom:18px}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <div class="main">
+    <header>
+      <div class="logo">A few <span>questions</span></div>
+      <div class="who" id="who"></div>
+    </header>
+    <div class="thread"><i id="bar"></i></div>
+    <div class="crumb" id="crumb">Let's begin</div>
+    <div id="screen"></div>
+  </div>
+</div>
+
+<div class="nav" id="nav" style="display:none">
+  <div class="in">
+    <button class="btn ghost" id="backBtn" type="button">Back</button>
+    <button class="btn primary" id="nextBtn" type="button">Next</button>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+
+/* ══════════════════════════════════════════════════════════
+   CONFIG · put your Apps Script web app URL between the quotes
+   ══════════════════════════════════════════════════════════ */
+var ENDPOINT = "";
+/* ══════════════════════════════════════════════════════════ */
+
+var DRAFT_KEY = "candidate_form_draft_v1";
+
+var SECTIONS = {
+  A:{name:"About you", color:"lilac"},
+  B:{name:"Drive and grit", color:"peach"},
+  C:{name:"Sales and the phone", color:"blush"},
+  D:{name:"The practical side", color:"mint"}
+};
+
+var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+var QUESTIONS = [
+  {id:"q1", sec:"A", short:"How friends describe you",
+   q:"If we rang your best mate right now, how would they describe you?",
+   opts:["I'm the reliable one, I always show up","I'm the life of the party","I'm the calm one when everything goes wrong","I'm ambitious, always chasing the next thing","I'm honest and direct, I say it how it is","I'm the quiet achiever, I just get things done"]},
+
+  {id:"q2", sec:"A", short:"Birth month", type:"month",
+   q:"What month were you born in?",
+   opts:[]},
+
+  {id:"q3", sec:"A", short:"Outside of work",
+   q:"What do you get up to outside of work?",
+   opts:["Sport, training and keeping fit","Family time","A side project or small business of my own","Out and about with mates","Gaming and quiet time at home","The beach, camping and the outdoors"]},
+
+  {id:"q4", sec:"A", short:"Juggling things",
+   q:"How do you go when a few things land on you at once?",
+   opts:["I thrive on it, I love being flat out","I make a list and work through it calmly","I get it all done, but I feel the pressure","I prefer one thing at a time, done well","It honestly depends on the day"]},
+
+  {id:"q5", sec:"A", short:"Morning or night",
+   q:"Are you a morning person or a night owl?",
+   opts:["I'm up at five, no dramas","I'm a morning person once the coffee kicks in","I come alive in the afternoon","I'm a night owl through and through","It depends on the week I'm having"]},
+
+  {id:"q6", sec:"B", short:"What drives you",
+   q:"What actually gets you out of bed for work?",
+   opts:["Money and hitting targets","Building a real career","Helping people out of tough spots","Proving the doubters wrong","Providing for my family","The buzz of winning"]},
+
+  {id:"q7", sec:"B", short:"Handling knockbacks",
+   q:"How do you handle it when someone knocks you back or tells you no?",
+   opts:["I bounce straight back and get on with it","I take a minute, then I move on","I dwell on it a bit, but I push through","I find it tough, and I'm still working on that","I honestly hate it"]},
+
+  {id:"q8", sec:"B", short:"Hard work story",
+   q:"Tell us about a time you had to really work hard for something.",
+   opts:["I worked two jobs at once","I built something from nothing","I competed in sport at a serious level","I came back from a big setback","I studied while working full time","I saved hard for something big"]},
+
+  {id:"q9", sec:"B", short:"Hours appetite",
+   q:"What does a big week look like for you? How many hours are you happy to put in?",
+   opts:["A standard thirty eight, and that's it","Thirty eight to forty five","Forty five to fifty five when it counts","Whatever it takes to win","Flexibility matters more to me than the hours"]},
+
+  {id:"q10", sec:"B", short:"Commission comfort",
+   q:"How do you feel about commission based pay, where the ceiling is high if you back yourself?",
+   opts:["I'm all in, I've backed myself before","I'm comfortable with it, with an advance to start","I'd want to understand the numbers properly first","I'm a bit nervous, but open to it","It's not for me"]},
+
+  {id:"q11", sec:"C", short:"Phone all day",
+   q:"How do you feel about being on the phone for most of the day?",
+   opts:["I love it, I could talk all day","I'm comfortable, I've done it before","I can do it, but I prefer face to face","I haven't done much of it, but I'm keen to learn","I'm a bit nervous about it"]},
+
+  {id:"q12", sec:"C", short:"Sales background",
+   q:"What's your sales background? Have you sold before?",
+   opts:["Car sales","Retail","A call centre or phone sales","Real estate","Finance or broking already","Door to door or field sales","I haven't sold yet, but I'm hungry for it"]},
+
+  {id:"q13", sec:"C", short:"Taking feedback",
+   q:"How do you take it when someone pulls you up on your work?",
+   opts:["I take it on board straight away","I listen first, then ask questions","I need a minute, but I come around","I can get a bit defensive at first","It depends on who's giving it"]},
+
+  {id:"q14", sec:"C", short:"Process or own way",
+   q:"Are you more of a follow the proven process person, or a do it your own way person?",
+   opts:["Give me the playbook and I'll run it","Process first, then I make it my own","A genuine mix of both","I prefer doing things my own way","I hate being boxed in"]},
+
+  {id:"q15", sec:"C", short:"Tech comfort",
+   q:"How are you with tech? Things like CRMs and juggling a few systems at once.",
+   opts:["I pick up new systems fast","Solid, I've used CRMs before","I get there with a bit of training","I'm not confident yet, but I'm willing","Honestly, I struggle with tech"]},
+
+  {id:"q16", sec:"D", short:"Qualifications",
+   q:"Where are you at with your qualifications?",
+   opts:["I hold a current Cert IV in Finance and Mortgage Broking","I hold a Diploma as well","I'm studying the Cert IV now","I haven't started, but I'm happy to while I work","I'm not sure what I need yet"]},
+
+  {id:"q17", sec:"D", short:"Availability",
+   q:"Anything about your availability we should know? Set hours you need, or other commitments?",
+   opts:["I'm fully available, no limits","Mostly flexible, with a couple of fixed things","I need set hours each week","I have study or a side project on the go","I'm sorting a few things out first"]},
+
+  {id:"q18", sec:"D", short:"Two to three year goal",
+   q:"Where do you want to be in two or three years?",
+   opts:["Running my own book of clients","Leading a team","Earning serious money, the title doesn't matter","Owning a business one day","Stable and steady is the goal"]},
+
+  {id:"q19", sec:"D", short:"Why broking",
+   q:"Why finance broking? What pulls you toward it?",
+   opts:["The earning potential","Helping people get their finance sorted","I know people doing well in it","I'm ready for a career change","I love cars and doing deals","Honestly, I'm still exploring my options"]},
+
+  {id:"q20", sec:"D", short:"Start timing",
+   q:"Is there anything stopping you from starting in the next few weeks?",
+   opts:["I can start straight away","One week of notice","Two weeks of notice","Four weeks of notice","I have a holiday already booked","I have a few things to sort out first"]}
+];
+
+var TOTAL = QUESTIONS.length;
+
+/* ---------------- state ---------------- */
+
+var state = { name:"", email:"", phone:"", answers:{}, notes:"", sent:false };
+var step = -1; // -1 intro, 0..TOTAL-1 questions, TOTAL notes, TOTAL+1 review, TOTAL+2 done
+
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+function toast(msg){
+  var t = $("toast");
+  t.textContent = msg;
+  t.classList.add("on");
+  clearTimeout(t._h);
+  t._h = setTimeout(function(){ t.classList.remove("on"); }, 1900);
+}
+
+function ans(id, isMonth){
+  if(!state.answers[id]) state.answers[id] = isMonth ? {month:"", other:""} : {picked:[], other:""};
+  return state.answers[id];
+}
+
+function saveDraft(){
+  try{ localStorage.setItem(DRAFT_KEY, JSON.stringify({state:state, step:step})); }catch(e){}
+}
+function loadDraft(){
+  try{
+    var raw = localStorage.getItem(DRAFT_KEY);
+    if(!raw) return false;
+    var d = JSON.parse(raw);
+    if(!d || !d.state) return false;
+    state = d.state;
+    if(state.sent) return false;
+    step = typeof d.step === "number" ? d.step : -1;
+    return true;
+  }catch(e){ return false; }
+}
+
+/* ---------------- tidy up · plain rules, no AI ---------------- */
+
+var TIDY_WORDS = {
+  "u":"you","ur":"your","urs":"yours","r":"are","n":"and","y":"why","k":"okay","ok":"okay",
+  "b4":"before","bc":"because","cuz":"because","coz":"because","becuase":"because","becasue":"because",
+  "prolly":"probably","probs":"probably","thru":"through","tho":"though","altho":"although",
+  "gonna":"going to","wanna":"want to","gotta":"got to","kinda":"kind of","sorta":"sort of",
+  "outta":"out of","lotta":"lot of","dunno":"don't know","cmon":"come on",
+  "alot":"a lot","abit":"a bit","aswell":"as well","infact":"in fact","incase":"in case",
+  "atm":"at the moment","asap":"as soon as possible",
+  "im":"I'm","ive":"I've","ill":"I'll","id":"I'd","dont":"don't","doesnt":"doesn't",
+  "didnt":"didn't","cant":"can't","couldnt":"couldn't","wouldnt":"wouldn't","shouldnt":"shouldn't",
+  "wont":"won't","isnt":"isn't","arent":"aren't","wasnt":"wasn't","werent":"weren't",
+  "hasnt":"hasn't","havent":"haven't","hadnt":"hadn't","thats":"that's","whats":"what's",
+  "hes":"he's","shes":"she's","theyre":"they're","theyve":"they've","theres":"there's",
+  "youre":"you're","youve":"you've","youll":"you'll","weve":"we've",
+  "lets":"let's","aint":"isn't","whos":"who's",
+  "teh":"the","adn":"and","hte":"the","taht":"that","tehy":"they",
+  "recieve":"receive","recieved":"received","seperate":"separate","seperately":"separately",
+  "definately":"definitely","definatly":"definitely","defiantly":"definitely",
+  "occured":"occurred","untill":"until","allready":"already",
+  "acheive":"achieve","acheived":"achieved","beleive":"believe","beleived":"believed",
+  "buisness":"business","busness":"business","calender":"calendar","carrer":"career",
+  "commited":"committed","comming":"coming","curently":"currently",
+  "enviroment":"environment","experiance":"experience","experianced":"experienced",
+  "familar":"familiar","finacial":"financial","goverment":"government","happend":"happened",
+  "independant":"independent","intrested":"interested","intresting":"interesting",
+  "knowlege":"knowledge","maintainance":"maintenance","managment":"management",
+  "neccessary":"necessary","necesary":"necessary","noticable":"noticeable",
+  "occassion":"occasion","oppurtunity":"opportunity","opportunty":"opportunity",
+  "paticular":"particular","persue":"pursue","prefered":"preferred","probaly":"probably",
+  "proffesional":"professional","profesional":"professional","reccomend":"recommend",
+  "reccommend":"recommend","refered":"referred","relevent":"relevant",
+  "responsable":"responsible","succesful":"successful","successfull":"successful",
+  "sucessful":"successful","suprise":"surprise","tommorow":"tomorrow","tomorow":"tomorrow",
+  "truely":"truly","unfortunatly":"unfortunately","usualy":"usually","wich":"which",
+  "writting":"writing","yestarday":"yesterday","strenght":"strength","lenght":"length",
+  "recomended":"recommended","comfertable":"comfortable","comftable":"comfortable",
+  "commision":"commission","commisions":"commissions","comission":"commission",
+  "settlment":"settlement","settlments":"settlements","aggregater":"aggregator",
+  "dealship":"dealership","dealships":"dealerships","cetificate":"certificate",
+  "qualifcation":"qualification","qualifcations":"qualifications","avaliable":"available",
+  "availble":"available","availabilty":"availability","imediate":"immediate",
+  "immediatly":"immediately","salery":"salary","intrest":"interest",
+  "aplication":"application","aplications":"applications",
+  "organize":"organise","organized":"organised","organizing":"organising",
+  "organization":"organisation","realize":"realise","realized":"realised",
+  "recognize":"recognise","recognized":"recognised","apologize":"apologise",
+  "specialize":"specialise","specialized":"specialised","prioritize":"prioritise",
+  "analyze":"analyse","analyzed":"analysed","center":"centre","favorite":"favourite",
+  "behavior":"behaviour","color":"colour"
+};
+
+var TIDY_PROPER = {
+  "monday":"Monday","tuesday":"Tuesday","wednesday":"Wednesday","thursday":"Thursday",
+  "friday":"Friday","saturday":"Saturday","sunday":"Sunday",
+  "january":"January","february":"February","march":"March","april":"April",
+  "june":"June","july":"July","august":"August","september":"September",
+  "october":"October","november":"November","december":"December",
+  "docusign":"DocuSign","equifax":"Equifax",
+  "brisbane":"Brisbane","queensland":"Queensland","australia":"Australia",
+  "australian":"Australian","aussie":"Aussie","toyota":"Toyota","suncorp":"Suncorp",
+  "abn":"ABN","crm":"CRM","asic":"ASIC","kpi":"KPI","kpis":"KPIs","gst":"GST",
+  "fbaa":"FBAA","ceo":"CEO"
+};
+
+function tidyEsc(w){ return w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+function tidyText(raw){
+  if(!raw) return "";
+  var t = String(raw);
+  t = t.replace(/[\u2018\u2019\u02BC]/g, "'").replace(/[\u201C\u201D]/g, '"');
+  t = t.replace(/\r\n?/g, "\n");
+  t = t.split("\n").map(function(l){ return l.replace(/[ \t]+/g, " ").trim(); }).join("\n");
+  t = t.replace(/\n{3,}/g, "\n\n").trim();
+  if(!t) return "";
+  t = t.replace(/\.{4,}/g, "...").replace(/([!?]){2,}/g, "$1").replace(/,{2,}/g, ",");
+  t = t.replace(/\s+([,.!?;:])/g, "$1");
+  t = t.replace(/([,;:])(?=[^\s\d])/g, "$1 ");
+  t = t.replace(/([.!?])(?=[A-Za-z])/g, "$1 ");
+  t = t.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")");
+  for(var w in TIDY_WORDS){
+    if(!TIDY_WORDS.hasOwnProperty(w)) continue;
+    t = t.replace(new RegExp("\\b" + tidyEsc(w) + "\\b", "gi"), TIDY_WORDS[w]);
+  }
+  for(var p in TIDY_PROPER){
+    if(!TIDY_PROPER.hasOwnProperty(p)) continue;
+    t = t.replace(new RegExp("\\b" + tidyEsc(p) + "\\b", "gi"), TIDY_PROPER[p]);
+  }
+  t = t.replace(/\bi\b/g, "I");
+  t = t.replace(/\bi'/g, "I'");
+  t = t.replace(/\ba ([aeiouAEIOU])/g, "an $1");
+  t = t.replace(/\ban ([^aeiouAEIOU\s])/g, "a $1");
+  t = t.replace(/\b(\w+) \1\b/gi, function(m, one){
+    return (/^(had|that|is|very|no)$/i).test(one) ? m : one;
+  });
+  t = t.replace(/(^|[.!?]\s+|\n\s*)([a-z])/g, function(m, lead, ch){ return lead + ch.toUpperCase(); });
+  if(!/[.!?:]$/.test(t)) t += ".";
+  return t;
+}
+
+function attachTidy(id, setter){
+  var ta = $(id);
+  if(!ta) return;
+  var bar = document.createElement("div");
+  bar.className = "tidybar";
+  var btn = document.createElement("button");
+  btn.type = "button"; btn.className = "tidybtn"; btn.textContent = "Tidy up my spelling";
+  var undo = document.createElement("button");
+  undo.type = "button"; undo.className = "tidybtn ghost"; undo.textContent = "Undo"; undo.style.display = "none";
+  var prev = "";
+  btn.addEventListener("click", function(){
+    var before = ta.value;
+    if(!before.trim()){ toast("Nothing to tidy yet"); return; }
+    var after = tidyText(before);
+    if(after === before){ toast("Already reads fine"); return; }
+    prev = before; ta.value = after; setter(after);
+    undo.style.display = ""; toast("Tidied up");
+  });
+  undo.addEventListener("click", function(){
+    if(!prev) return;
+    ta.value = prev; setter(prev); undo.style.display = "none"; toast("Put back");
+  });
+  bar.appendChild(btn); bar.appendChild(undo);
+  ta.parentNode.insertBefore(bar, ta.nextSibling);
+}
+
+/* ---------------- screens ---------------- */
+
+function renderIntro(){
+  $("screen").innerHTML =
+    '<div class="card">' +
+      '<div class="sticker lilac">About ten minutes</div>' +
+      '<h1>Before we have a chat, tell us a bit about you</h1>' +
+      '<p class="hint">Twenty quick questions. No right answers, we just want a feel for how you work.</p>' +
+      '<div class="body">' +
+        '<h2>What the role looks like</h2>' +
+      '</div>' +
+      '<ul class="facts">' +
+        '<li>Writing asset finance, working leads end to end</li>' +
+        '<li><b>Commission based, on your own ABN.</b> Not a salaried position</li>' +
+        '<li>A <b>weekly advance</b> while you get established, reviewed after the first month</li>' +
+        '<li>Leads are supplied</li>' +
+        '<li>Fully remote, with a weekly catch up</li>' +
+        '<li>No Cert IV yet is fine, you can study while you work</li>' +
+      '</ul>' +
+      '<p class="hint" style="margin-bottom:22px">If commission based work is not for you, no hard feelings, and thanks for your time.</p>' +
+      '<label class="small" for="nameIn">Your name</label>' +
+      '<input type="text" id="nameIn" autocomplete="name" placeholder="First and last">' +
+      '<label class="small" for="emailIn">Email</label>' +
+      '<input type="email" id="emailIn" autocomplete="email" placeholder="you@example.com">' +
+      '<label class="small" for="phoneIn">Mobile</label>' +
+      '<input type="tel" id="phoneIn" autocomplete="tel" placeholder="04...">' +
+    '</div>';
+  $("nameIn").value = state.name;
+  $("emailIn").value = state.email;
+  $("phoneIn").value = state.phone;
+  function bind(id, key){
+    $(id).addEventListener("input", function(){ state[key] = this.value; saveDraft(); refreshChrome(); });
+  }
+  bind("nameIn","name"); bind("emailIn","email"); bind("phoneIn","phone");
+}
+
+function renderMonth(qi){
+  var q = QUESTIONS[qi], sec = SECTIONS[q.sec], a = ans(q.id, true);
+  var opts = '<option value="">Pick a month</option>';
+  for(var m=0;m<12;m++) opts += '<option value="' + MONTHS[m] + '">' + MONTHS[m] + '</option>';
+  $("screen").innerHTML =
+    '<div class="card">' +
+      '<div class="sticker ' + sec.color + '"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
+      '<h1>' + esc(q.q) + '</h1>' +
+      '<p class="hint">Just the month, not the date.</p>' +
+      '<select id="monthIn">' + opts + '</select>' +
+      '<label class="small" for="otherIn">Anything else you want to add</label>' +
+      '<textarea id="otherIn" placeholder="Optional"></textarea>' +
+    '</div>';
+  $("monthIn").value = a.month || "";
+  $("monthIn").addEventListener("change", function(){ a.month = this.value; saveDraft(); });
+  var other = $("otherIn");
+  other.value = a.other || "";
+  other.addEventListener("input", function(){ a.other = this.value; saveDraft(); });
+  attachTidy("otherIn", function(v){ a.other = v; saveDraft(); });
+}
+
+function renderQuestion(qi){
+  var q = QUESTIONS[qi];
+  if(q.type === "month"){ renderMonth(qi); return; }
+  var sec = SECTIONS[q.sec], a = ans(q.id, false);
+  var chipsHtml = "";
+  for(var i=0;i<q.opts.length;i++){
+    var on = a.picked.indexOf(q.opts[i]) !== -1;
+    chipsHtml += '<button type="button" class="chip c-' + sec.color + (on ? " on" : "") + '" data-opt="' + esc(q.opts[i]) + '">' +
+      '<span class="letter">' + String.fromCharCode(65 + i) + '</span><span>' + esc(q.opts[i]) + '</span></button>';
+  }
+  $("screen").innerHTML =
+    '<div class="card">' +
+      '<div class="sticker ' + sec.color + '"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
+      '<h1>' + esc(q.q) + '</h1>' +
+      '<p class="hint">Pick whichever fit. More than one is fine, and there is room below to say it in your own words.</p>' +
+      '<div class="chips">' + chipsHtml + '</div>' +
+      '<label class="small" for="otherIn">In your own words</label>' +
+      '<textarea id="otherIn" placeholder="Optional, but we do read these"></textarea>' +
+    '</div>';
+  var chips = $("screen").querySelectorAll(".chip");
+  for(var c=0;c<chips.length;c++){
+    chips[c].addEventListener("click", function(){
+      var opt = this.getAttribute("data-opt");
+      var idx = a.picked.indexOf(opt);
+      if(idx === -1){ a.picked.push(opt); this.classList.add("on"); }
+      else { a.picked.splice(idx,1); this.classList.remove("on"); }
+      saveDraft(); refreshChrome();
+    });
+  }
+  var other = $("otherIn");
+  other.value = a.other || "";
+  other.addEventListener("input", function(){ a.other = this.value; saveDraft(); refreshChrome(); });
+  attachTidy("otherIn", function(v){ a.other = v; saveDraft(); refreshChrome(); });
+}
+
+function renderNotes(){
+  $("screen").innerHTML =
+    '<div class="card">' +
+      '<div class="sticker mint">Last one</div>' +
+      '<h1>Anything else we should know?</h1>' +
+      '<p class="hint">Questions about the role, things the questions did not cover, whatever you reckon is worth saying.</p>' +
+      '<textarea id="notesIn" style="min-height:150px" placeholder="Optional"></textarea>' +
+    '</div>';
+  var t = $("notesIn");
+  t.value = state.notes || "";
+  t.addEventListener("input", function(){ state.notes = this.value; saveDraft(); });
+  attachTidy("notesIn", function(v){ state.notes = v; saveDraft(); });
+}
+
+function renderReview(){
+  var html = '<div class="card">' +
+    '<div class="sticker lilac">Nearly done</div>' +
+    '<h1>Have a quick read before you send</h1>' +
+    '<p class="hint">Tap Back if you want to change anything.</p><ul class="review">';
+  html += '<li><div class="q">Name</div><div class="a">' + (esc(state.name) || '<em>Not filled in</em>') + '</div></li>';
+  html += '<li><div class="q">Email</div><div class="a">' + (esc(state.email) || '<em>Not filled in</em>') + '</div></li>';
+  html += '<li><div class="q">Mobile</div><div class="a">' + (esc(state.phone) || '<em>Not filled in</em>') + '</div></li>';
+  for(var i=0;i<QUESTIONS.length;i++){
+    var q = QUESTIONS[i], a = state.answers[q.id];
+    var val = "";
+    if(a){
+      if(q.type === "month") val = a.month || "";
+      else if(a.picked && a.picked.length) val = a.picked.join(" &middot; ");
+      if(a.other && a.other.trim()) val += (val ? "<br>" : "") + esc(a.other);
+    }
+    html += '<li><div class="q">' + (i+1) + '. ' + esc(q.short) + '</div><div class="a">' + (val || '<em>Skipped</em>') + '</div></li>';
+  }
+  if(state.notes && state.notes.trim()){
+    html += '<li><div class="q">Anything else</div><div class="a">' + esc(state.notes) + '</div></li>';
+  }
+  html += '</ul></div>';
+  $("screen").innerHTML = html;
+}
+
+function renderDone(ok, payload){
+  var host = $("screen");
+  if(ok){
+    host.innerHTML =
+      '<div class="card">' +
+        '<div class="big-tick">&#10003;</div>' +
+        '<h1>All sent, thanks ' + (esc(state.name.split(" ")[0]) || "for that") + '</h1>' +
+        '<p class="hint">Your answers are in. We will be in touch about a chat. You can close this page now.</p>' +
+      '</div>';
+  } else {
+    host.innerHTML =
+      '<div class="card">' +
+        '<div class="sticker peach">Almost</div>' +
+        '<h1>Could not send automatically</h1>' +
+        '<div class="err">No dramas, nothing is lost. Hit the copy button below, then paste it into an email or text back to whoever sent you this link.</div>' +
+        '<textarea class="codebox" id="codeBox" readonly></textarea>' +
+        '<button class="btn primary big" id="copyBtn" type="button">Copy my answers</button>' +
+      '</div>';
+    $("codeBox").value = JSON.stringify(payload);
+    $("copyBtn").addEventListener("click", function(){
+      var box = $("codeBox");
+      box.select(); box.setSelectionRange(0, 999999);
+      var done = false;
+      try{ done = document.execCommand("copy"); }catch(e){}
+      if(navigator.clipboard && !done){
+        navigator.clipboard.writeText(box.value).then(function(){ toast("Copied"); });
+      } else {
+        toast(done ? "Copied" : "Select it all and copy");
+      }
+    });
+  }
+}
+
+/* ---------------- chrome ---------------- */
+
+function refreshChrome(){
+  var pct = 0, crumb = "Let's begin", nextLabel = "Start", canNext = true;
+  if(step === -1){
+    canNext = !!(state.name.trim() && state.email.trim());
+    nextLabel = "Start";
+  } else if(step >= 0 && step < TOTAL){
+    pct = ((step + 1) / (TOTAL + 2)) * 100;
+    crumb = SECTIONS[QUESTIONS[step].sec].name + " &middot; " + (step + 1) + " of " + TOTAL;
+    nextLabel = "Next";
+  } else if(step === TOTAL){
+    pct = ((TOTAL + 1) / (TOTAL + 2)) * 100;
+    crumb = "Last one";
+    nextLabel = "Review";
+  } else if(step === TOTAL + 1){
+    pct = 100; crumb = "Check it over"; nextLabel = "Send my answers";
+  } else {
+    pct = 100; crumb = "Done";
+  }
+  $("bar").style.width = pct + "%";
+  $("crumb").innerHTML = crumb;
+  $("who").textContent = step > -1 && state.name ? state.name : "";
+  var nav = $("nav");
+  if(step >= TOTAL + 2){ nav.style.display = "none"; return; }
+  nav.style.display = "";
+  $("backBtn").style.display = step <= -1 ? "none" : "";
+  $("nextBtn").textContent = nextLabel;
+  $("nextBtn").disabled = !canNext;
+}
+
+function render(){
+  window.scrollTo(0,0);
+  if(step === -1) renderIntro();
+  else if(step >= 0 && step < TOTAL) renderQuestion(step);
+  else if(step === TOTAL) renderNotes();
+  else if(step === TOTAL + 1) renderReview();
+  refreshChrome();
+  saveDraft();
+}
+
+function buildPayload(){
+  var flat = { name:state.name, email:state.email, phone:state.phone, notes:state.notes,
+               submitted: new Date().toISOString() };
+  for(var i=0;i<QUESTIONS.length;i++){
+    var q = QUESTIONS[i], a = state.answers[q.id] || {};
+    var picked = q.type === "month" ? (a.month || "") : ((a.picked || []).join(" | "));
+    flat[q.id + "_" + q.short.replace(/[^a-z0-9]+/gi,"_")] = picked;
+    flat[q.id + "_own_words"] = a.other || "";
+  }
+  return flat;
+}
+
+function send(){
+  var payload = buildPayload();
+  var btn = $("nextBtn");
+  btn.disabled = true; btn.textContent = "Sending...";
+  if(!ENDPOINT){
+    state.sent = true; saveDraft();
+    step = TOTAL + 2; renderDone(false, payload); refreshChrome();
+    return;
+  }
+  fetch(ENDPOINT, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload)
+  }).then(function(){
+    state.sent = true; saveDraft();
+    try{ localStorage.removeItem(DRAFT_KEY); }catch(e){}
+    step = TOTAL + 2; renderDone(true, payload); refreshChrome();
+  }).catch(function(){
+    state.sent = true; saveDraft();
+    step = TOTAL + 2; renderDone(false, payload); refreshChrome();
+  });
+}
+
+$("nextBtn").addEventListener("click", function(){
+  if(step === TOTAL + 1){ send(); return; }
+  if(step === -1 && !(state.name.trim() && state.email.trim())){ toast("Name and email first"); return; }
+  step++;
+  render();
+});
+$("backBtn").addEventListener("click", function(){
+  if(step <= -1) return;
+  step--;
+  render();
+});
+
+document.addEventListener("keydown", function(e){
+  var tag = (e.target.tagName || "").toLowerCase();
+  if(tag === "input" || tag === "textarea" || tag === "select") return;
+  if(e.key === "ArrowRight" || e.key === "Enter"){ $("nextBtn").click(); }
+  if(e.key === "ArrowLeft"){ $("backBtn").click(); }
+});
+
+if(loadDraft() && step > -1){
+  render();
+  toast("Picked up where you left off");
+} else {
+  step = -1;
+  render();
+}
+</script>
+</body>
+</html>
