@@ -74,6 +74,18 @@ input[type=text],select{margin-bottom:14px}
 .codebox{width:100%;min-height:130px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:12px}
 .big-tick{width:58px;height:58px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:16px}
 .err{background:var(--soft);border-radius:10px;padding:14px 16px;font-size:14px;margin-bottom:16px}
+.sending{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 0 6px}
+.spinner{width:52px;height:52px;border-radius:50%;margin-bottom:22px;
+  background:conic-gradient(from 0deg,#833AB4,#E1306C,#F77737,#833AB4);
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 0);
+  mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 0);
+  animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sending .line{font-size:16px;font-weight:600;min-height:24px;animation:fadein .4s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.dots{display:flex;gap:6px;margin-top:16px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .3s}
+.dots i.on{background:var(--ink)}
 </style>
 </head>
 <body>
@@ -597,6 +609,41 @@ function renderReview(){
   $("screen").innerHTML = html;
 }
 
+var SENDING_LINES = [
+  "Sending your answers",
+  "Bribing the internet to hurry up",
+  "Reading your handwriting",
+  "Checking you actually said that",
+  "Filing it under people worth ringing",
+  "Nearly there, hang about"
+];
+
+function renderSending(){
+  var host = $("screen");
+  var dots = "";
+  for(var i=0;i<SENDING_LINES.length;i++) dots += '<i' + (i===0?' class="on"':'') + '></i>';
+  host.innerHTML =
+    '<div class="card">' +
+      '<div class="sending">' +
+        '<div class="spinner"></div>' +
+        '<div class="line" id="sendLine">' + SENDING_LINES[0] + '</div>' +
+        '<div class="dots" id="sendDots">' + dots + '</div>' +
+      '</div>' +
+    '</div>';
+  var n = 0;
+  return setInterval(function(){
+    n = (n + 1) % SENDING_LINES.length;
+    var line = $("sendLine");
+    if(!line) return;
+    line.style.animation = "none";
+    line.offsetHeight;
+    line.style.animation = "";
+    line.textContent = SENDING_LINES[n];
+    var ds = $("sendDots").children;
+    for(var i=0;i<ds.length;i++) ds[i].className = (i === n ? "on" : "");
+  }, 1400);
+}
+
 function renderDone(ok, payload){
   var host = $("screen");
   if(ok){
@@ -681,26 +728,33 @@ function buildPayload(){
 
 function send(){
   var payload = buildPayload();
-  var btn = $("nextBtn");
-  btn.disabled = true; btn.textContent = "Sending...";
-  if(!ENDPOINT){
-    state.sent = true; saveDraft();
-    step = TOTAL + 1; renderDone(false, payload); refreshChrome();
-    return;
+  var started = Date.now();
+  step = TOTAL + 1;
+  $("nav").style.display = "none";
+  var timer = renderSending();
+  refreshChrome();
+  $("nav").style.display = "none";
+
+  function finish(ok){
+    // let the spinner have its moment, it feels broken if it flashes past
+    var wait = Math.max(0, 2600 - (Date.now() - started));
+    setTimeout(function(){
+      clearInterval(timer);
+      state.sent = true; saveDraft();
+      if(ok){ try{ localStorage.removeItem(DRAFT_KEY); }catch(e){} }
+      renderDone(ok, payload);
+      refreshChrome();
+    }, wait);
   }
+
+  if(!ENDPOINT){ finish(false); return; }
+
   fetch(ENDPOINT, {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify(payload)
-  }).then(function(){
-    state.sent = true; saveDraft();
-    try{ localStorage.removeItem(DRAFT_KEY); }catch(e){}
-    step = TOTAL + 1; renderDone(true, payload); refreshChrome();
-  }).catch(function(){
-    state.sent = true; saveDraft();
-    step = TOTAL + 1; renderDone(false, payload); refreshChrome();
-  });
+  }).then(function(){ finish(true); }).catch(function(){ finish(false); });
 }
 
 $("nextBtn").addEventListener("click", function(){
