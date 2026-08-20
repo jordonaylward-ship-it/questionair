@@ -133,83 +133,83 @@ var MONTHS = ["January","February","March","April","May","June","July","August",
 
 var QUESTIONS = [
   {id:"q1", sec:"A", short:"How friends describe you",
-   q:"If we called your best mate right now, how would they describe you?",
-   opts:["I'm the reliable one, I always show up","I'm the life of the party","I'm the calm one when everything goes wrong","I'm ambitious, always chasing the next thing","I'm honest and direct, I say it how it is","I'm the quiet achiever, I just get things done"]},
+   q:"If we called your closest friend right now, how would they describe you?",
+   opts:["Reliable, I always show up","Outgoing, I get on with everyone","Calm, especially when things go wrong","Ambitious, always chasing the next thing","Straight down the line, I say what I think","A quiet achiever, I just get it done"]},
 
   {id:"q2", sec:"A", short:"Birth month", type:"month",
    q:"What month were you born in?", opts:[]},
 
   {id:"q3", sec:"A", short:"Outside of work",
-   q:"What do you get up to outside of work?",
-   opts:["Sport, training and keeping fit","Family time","A side project or small business of my own","Out and about with mates","Gaming and quiet time at home","The beach, camping and the outdoors"]},
+   q:"What do you enjoy doing outside of work?",
+   opts:["Sport, training and keeping fit","Time with family","A side project or small business of my own","Catching up with friends","Gaming and quiet time at home","The beach, camping and the outdoors"]},
 
   {id:"q4", sec:"A", short:"Juggling things",
-   q:"How do you go when a few things land on you at once?",
-   opts:["I thrive on it, I love being flat out","I make a list and work through it calmly","I get it all done, but I feel the pressure","I prefer one thing at a time, done well","It honestly depends on the day"]},
+   q:"How do you handle it when several things land on you at once?",
+   opts:["I thrive on it, I like being busy","I make a list and work through it calmly","I get it all done, but I feel the pressure","I prefer one thing at a time, done properly","It depends on the day"]},
 
   {id:"q5", sec:"A", short:"Morning or night",
    q:"Are you a morning person or a night owl?",
-   opts:["I'm up at five, no dramas","I'm a morning person once the coffee kicks in","I come alive in the afternoon","I'm a night owl through and through","It depends on the week I'm having"]},
+   opts:["Up early, no problem","A morning person once the coffee kicks in","I hit my stride in the afternoon","Definitely a night owl","It depends on the week"]},
 
   {id:"q6", sec:"B", short:"What drives you",
-   q:"What actually gets you out of bed for work?",
-   opts:["Money and hitting targets","Building a real career","Helping people out of tough spots","Proving the doubters wrong","Providing for my family","The buzz of winning"]},
+   q:"What motivates you at work?",
+   opts:["Money and hitting targets","Building a long term career","Helping people out of a tough spot","Proving people wrong","Providing for my family","Winning, plain and simple"]},
 
   {id:"q7", sec:"B", short:"Handling knockbacks",
-   q:"How do you handle it when someone knocks you back or tells you no?",
-   opts:["I bounce straight back and get on with it","I take a minute, then I move on","I dwell on it a bit, but I push through","I find it tough, and I'm still working on that","I honestly hate it"]},
+   q:"How do you handle rejection or being told no?",
+   opts:["I move straight on to the next one","I take a moment, then move on","It sits with me, but I push through","I find it difficult and I am working on it","I struggle with it"]},
 
   {id:"q8", sec:"B", short:"Hard work story",
-   q:"Tell us about a time you had to really work hard for something.",
-   opts:["I worked two jobs at once","I built something from nothing","I competed in sport at a serious level","I came back from a big setback","I studied while working full time","I saved hard for something big"]},
+   q:"Tell us about a time you had to work hard for something.",
+   opts:["I worked two jobs at once","I built something from nothing","I competed in sport at a serious level","I came back from a major setback","I studied while working full time","I saved hard for something significant"]},
 
   {id:"q9", sec:"B", short:"Hours appetite",
-   q:"What does a big week look like for you? How many hours are you happy to put in?",
-   opts:["A standard thirty eight, and that's it","Thirty eight to forty five","Forty five to fifty five when it counts","Whatever it takes to win","Flexibility matters more to me than the hours"]},
+   q:"What does a big week look like for you, and how many hours are you happy to work?",
+   opts:["A standard thirty eight and no more","Thirty eight to forty five","Forty five to fifty five when it matters","Whatever the job takes","Flexibility matters more to me than hours"]},
 
   {id:"q10", sec:"B", short:"Commission comfort",
    q:"How do you feel about commission based pay, where the ceiling is high if you back yourself?",
-   opts:["I'm all in, I've backed myself before","I'm comfortable with it, with an advance to start","I'd want to understand the numbers properly first","I'm a bit nervous, but open to it","It's not for me"]},
+   opts:["I am all in, I have backed myself before","Comfortable with it, provided there is an advance to start","I would want to understand the numbers first","A little nervous, but open to it","It is not for me"]},
 
   {id:"q11", sec:"C", short:"Phone all day",
    q:"How do you feel about being on the phone for most of the day?",
-   opts:["I love it, I could talk all day","I'm comfortable, I've done it before","I can do it, but I prefer face to face","I haven't done much of it, but I'm keen to learn","I'm a bit nervous about it"]},
+   opts:["I enjoy it, I could talk all day","Comfortable, I have done it before","I can do it, though I prefer face to face","I have not done much of it, but I want to learn","A little nervous about it"]},
 
   {id:"q12", sec:"C", short:"Sales background",
-   q:"What's your sales background? Have you sold before?",
-   opts:["Car sales","Retail","A call centre or phone sales","Real estate","Finance or broking already","Door to door or field sales","I haven't sold yet, but I'm hungry for it"]},
+   q:"What is your sales background?",
+   opts:["Car sales","Retail","Call centre or phone sales","Real estate","Finance or broking","Door to door or field sales","No sales experience yet, but I am keen"]},
 
   {id:"q13", sec:"C", short:"Taking feedback",
-   q:"How do you take it when someone pulls you up on your work?",
-   opts:["I take it on board straight away","I listen first, then ask questions","I need a minute, but I come around","I can get a bit defensive at first","It depends on who's giving it"]},
+   q:"How do you respond when someone gives you feedback on your work?",
+   opts:["I take it on board straight away","I listen first, then ask questions","I need a moment, but I come around","I can be defensive at first","It depends who it comes from"]},
 
   {id:"q14", sec:"C", short:"Process or own way",
-   q:"Are you more of a follow the proven process person, or a do it your own way person?",
-   opts:["Give me the playbook and I'll run it","Process first, then I make it my own","A genuine mix of both","I prefer doing things my own way","I hate being boxed in"]},
+   q:"Do you prefer following a proven process, or working things out your own way?",
+   opts:["Give me the process and I will follow it","Process first, then I adapt it","A mix of both","I prefer my own approach","I do not like being boxed in"]},
 
   {id:"q15", sec:"C", short:"Tech comfort",
-   q:"How are you with tech? Things like CRMs and juggling a few systems at once.",
-   opts:["I pick up new systems fast","Solid, I've used CRMs before","I get there with a bit of training","I'm not confident yet, but I'm willing","Honestly, I struggle with tech"]},
+   q:"How confident are you with technology, such as a CRM and running a few systems at once?",
+   opts:["I pick up new systems quickly","Confident, I have used a CRM before","I get there with some training","Not confident yet, but willing to learn","I find technology difficult"]},
 
   {id:"q16", sec:"D", short:"Qualifications",
-   q:"Where are you at with your qualifications?",
-   opts:["I hold a current Cert IV in Finance and Mortgage Broking","I hold a Diploma as well","I'm studying the Cert IV now","I haven't started, but I'm happy to while I work","I'm not sure what I need yet"]},
+   q:"Where are you up to with your qualifications?",
+   opts:["I hold a current Cert IV in Finance and Mortgage Broking","I hold a Diploma as well","I am studying the Cert IV now","I have not started, but I am happy to study while working","I am not sure what I need yet"]},
 
   {id:"q17", sec:"D", short:"Availability",
-   q:"Anything about your availability we should know? Set hours you need, or other commitments?",
-   opts:["I'm fully available, no limits","Mostly flexible, with a couple of fixed things","I need set hours each week","I have study or a side project on the go","I'm sorting a few things out first"]},
+   q:"Is there anything we should know about your availability, such as set hours or other commitments?",
+   opts:["Fully available, no restrictions","Mostly flexible, with a few fixed commitments","I need set hours each week","I have study or a side project underway","I have a few things to sort out first"]},
 
   {id:"q18", sec:"D", short:"Two to three year goal",
-   q:"Where do you want to be in two or three years?",
-   opts:["Running my own book of clients","Leading a team","Earning serious money, the title doesn't matter","Owning a business one day","Stable and steady is the goal"]},
+   q:"Where would you like to be in two or three years?",
+   opts:["Running my own book of clients","Leading a team","Earning well, the title does not matter","Owning a business","Somewhere stable and steady"]},
 
   {id:"q19", sec:"D", short:"Why broking",
-   q:"Why finance broking? What pulls you toward it?",
-   opts:["The earning potential","Helping people get their finance sorted","I know people doing well in it","I'm ready for a career change","I love cars and doing deals","Honestly, I'm still exploring my options"]},
+   q:"What draws you to finance broking?",
+   opts:["The earning potential","Helping people get their finance sorted","I know people doing well in it","I am ready for a career change","I enjoy cars and doing deals","I am still weighing up my options"]},
 
   {id:"q20", sec:"D", short:"Start timing",
-   q:"Is there anything stopping you from starting in the next few weeks?",
-   opts:["I can start straight away","One week of notice","Two weeks of notice","Four weeks of notice","I have a holiday already booked","I have a few things to sort out first"]}
+   q:"Is there anything that would stop you starting in the next few weeks?",
+   opts:["I can start straight away","One week notice","Two weeks notice","Four weeks notice","I have a holiday already booked","I have a few things to sort out first"]}
 ];
 
 var TOTAL = QUESTIONS.length;
@@ -523,9 +523,9 @@ function attachTidy(id, setter){
 function renderIntro(){
   $("screen").innerHTML =
     '<div class="card">' +
-      '<div class="sticker">About ten minutes</div>' +
+      '<div class="sticker">Around ten minutes</div>' +
       '<h1>Before we have a chat, tell us a bit about you</h1>' +
-      '<p class="hint">Twenty quick questions. No right answers, we just want a feel for how you work.</p>' +
+      '<p class="hint">Twenty short questions. There are no right answers, we simply want a sense of how you work.</p>' +
       '<label class="small" for="nameIn">Your full name</label>' +
       '<input type="text" id="nameIn" autocomplete="name" placeholder="First and last">' +
     '</div>';
@@ -541,9 +541,9 @@ function renderMonth(qi){
     '<div class="card">' +
       '<div class="sticker"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
       '<h1>' + esc(q.q) + '</h1>' +
-      '<p class="hint">Just the month, not the date.</p>' +
+      '<p class="hint">The month is enough, we do not need the date.</p>' +
       '<select id="monthIn">' + opts + '</select>' +
-      '<label class="small" for="otherIn">Anything else you want to add</label>' +
+      '<label class="small" for="otherIn">Anything you would like to add</label>' +
       '<textarea id="otherIn" placeholder="Optional"></textarea>' +
     '</div>';
   $("monthIn").value = a.month || "";
@@ -568,10 +568,10 @@ function renderQuestion(qi){
     '<div class="card">' +
       '<div class="sticker"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
       '<h1>' + esc(q.q) + '</h1>' +
-      '<p class="hint">Pick whichever fit. More than one is fine, and there is room below to say it in your own words.</p>' +
+      '<p class="hint">Select whichever apply. More than one is fine, and there is space below if you would rather answer in your own words.</p>' +
       '<div class="chips">' + chipsHtml + '</div>' +
       '<label class="small" for="otherIn">In your own words</label>' +
-      '<textarea id="otherIn" placeholder="Optional, but we do read these"></textarea>' +
+      '<textarea id="otherIn" placeholder="Optional, though we do read every one"></textarea>' +
     '</div>';
   var chips = $("screen").querySelectorAll(".chip");
   for(var c=0;c<chips.length;c++){
@@ -592,8 +592,8 @@ function renderQuestion(qi){
 function renderReview(){
   var html = '<div class="card">' +
     '<div class="sticker">Nearly done</div>' +
-    '<h1>Have a quick read before you send</h1>' +
-    '<p class="hint">Tap Back if you want to change anything.</p><ul class="review">';
+    '<h1>Have a read through before you send</h1>' +
+    '<p class="hint">Select Back if you would like to change anything.</p><ul class="review">';
   html += '<li><div class="q">Name</div><div class="a">' + (esc(state.name) || '<em>Not filled in</em>') + '</div></li>';
   for(var i=0;i<QUESTIONS.length;i++){
     var q = QUESTIONS[i], a = state.answers[q.id];
@@ -611,11 +611,11 @@ function renderReview(){
 
 var SENDING_LINES = [
   "Sending your answers",
-  "Bribing the internet to hurry up",
+  "Politely asking the internet to hurry up",
   "Reading your handwriting",
-  "Checking you actually said that",
-  "Filing it under people worth ringing",
-  "Nearly there, hang about"
+  "Checking you really said that",
+  "Filing you under worth a call",
+  "Almost there, thanks for waiting"
 ];
 
 function renderSending(){
@@ -651,14 +651,14 @@ function renderDone(ok, payload){
       '<div class="card">' +
         '<div class="big-tick">&#10003;</div>' +
         '<h1>All sent, thanks ' + (esc(state.name.split(" ")[0]) || "for that") + '</h1>' +
-        '<p class="hint">Your answers are in. We will be in touch about a chat. You can close this page now.</p>' +
+        '<p class="hint">Your answers have come through. We will be in touch shortly to arrange a time to talk. You can close this page now.</p>' +
       '</div>';
   } else {
     host.innerHTML =
       '<div class="card">' +
         '<div class="sticker">Almost</div>' +
         '<h1>Could not send automatically</h1>' +
-        '<div class="err">No dramas, nothing is lost. Hit the copy button below, then paste it into an email or text back to whoever sent you this link.</div>' +
+        '<div class="err">Nothing has been lost. Select the copy button below, then paste your answers into an email or text back to whoever sent you this link.</div>' +
         '<textarea class="codebox" id="codeBox" readonly></textarea>' +
         '<button class="btn primary big" id="copyBtn" type="button">Copy my answers</button>' +
       '</div>';
