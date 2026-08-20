@@ -129,85 +129,80 @@ var SECTIONS = {
   D:{name:"The practical side"}
 };
 
-var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-
 var QUESTIONS = [
   {id:"q1", sec:"A", short:"How friends describe you",
    q:"If we called your closest friend right now, how would they describe you?",
    opts:["Reliable, I always show up","Outgoing, I get on with everyone","Calm, especially when things go wrong","Ambitious, always chasing the next thing","Straight down the line, I say what I think","A quiet achiever, I just get it done"]},
 
-  {id:"q2", sec:"A", short:"Birth month", type:"month",
-   q:"What month were you born in?", opts:[]},
-
-  {id:"q3", sec:"A", short:"Outside of work",
+  {id:"q2", sec:"A", short:"Outside of work",
    q:"What do you enjoy doing outside of work?",
    opts:["Sport, training and keeping fit","Time with family","A side project or small business of my own","Catching up with friends","Gaming and quiet time at home","The beach, camping and the outdoors"]},
 
-  {id:"q4", sec:"A", short:"Juggling things",
+  {id:"q3", sec:"A", short:"Juggling things",
    q:"How do you handle it when several things land on you at once?",
    opts:["I thrive on it, I like being busy","I make a list and work through it calmly","I get it all done, but I feel the pressure","I prefer one thing at a time, done properly","It depends on the day"]},
 
-  {id:"q5", sec:"A", short:"Morning or night",
+  {id:"q4", sec:"A", short:"Morning or night",
    q:"Are you a morning person or a night owl?",
    opts:["Up early, no problem","A morning person once the coffee kicks in","I hit my stride in the afternoon","Definitely a night owl","It depends on the week"]},
 
-  {id:"q6", sec:"B", short:"What drives you",
+  {id:"q5", sec:"B", short:"What drives you",
    q:"What motivates you at work?",
    opts:["Money and hitting targets","Building a long term career","Helping people out of a tough spot","Proving people wrong","Providing for my family","Winning, plain and simple"]},
 
-  {id:"q7", sec:"B", short:"Handling knockbacks",
+  {id:"q6", sec:"B", short:"Handling knockbacks",
    q:"How do you handle rejection or being told no?",
    opts:["I move straight on to the next one","I take a moment, then move on","It sits with me, but I push through","I find it difficult and I am working on it","I struggle with it"]},
 
-  {id:"q8", sec:"B", short:"Hard work story",
+  {id:"q7", sec:"B", short:"Hard work story",
    q:"Tell us about a time you had to work hard for something.",
    opts:["I worked two jobs at once","I built something from nothing","I competed in sport at a serious level","I came back from a major setback","I studied while working full time","I saved hard for something significant"]},
 
-  {id:"q9", sec:"B", short:"Hours appetite",
+  {id:"q8", sec:"B", short:"Hours appetite",
    q:"What does a big week look like for you, and how many hours are you happy to work?",
    opts:["A standard thirty eight and no more","Thirty eight to forty five","Forty five to fifty five when it matters","Whatever the job takes","Flexibility matters more to me than hours"]},
 
-  {id:"q10", sec:"B", short:"Commission comfort",
+  {id:"q9", sec:"B", short:"Commission comfort",
    q:"How do you feel about commission based pay, where the ceiling is high if you back yourself?",
    opts:["I am all in, I have backed myself before","Comfortable with it, provided there is an advance to start","I would want to understand the numbers first","A little nervous, but open to it","It is not for me"]},
 
-  {id:"q11", sec:"C", short:"Phone all day",
+  {id:"q10", sec:"C", short:"Phone all day",
    q:"How do you feel about being on the phone for most of the day?",
    opts:["I enjoy it, I could talk all day","Comfortable, I have done it before","I can do it, though I prefer face to face","I have not done much of it, but I want to learn","A little nervous about it"]},
 
-  {id:"q12", sec:"C", short:"Sales background",
+  {id:"q11", sec:"C", short:"Sales background",
    q:"What is your sales background?",
    opts:["Car sales","Retail","Call centre or phone sales","Real estate","Finance or broking","Door to door or field sales","No sales experience yet, but I am keen"]},
 
-  {id:"q13", sec:"C", short:"Taking feedback",
+  {id:"q12", sec:"C", short:"Taking feedback",
    q:"How do you respond when someone gives you feedback on your work?",
    opts:["I take it on board straight away","I listen first, then ask questions","I need a moment, but I come around","I can be defensive at first","It depends who it comes from"]},
 
-  {id:"q14", sec:"C", short:"Process or own way",
+  {id:"q13", sec:"C", short:"Process or own way",
    q:"Do you prefer following a proven process, or working things out your own way?",
    opts:["Give me the process and I will follow it","Process first, then I adapt it","A mix of both","I prefer my own approach","I do not like being boxed in"]},
 
-  {id:"q15", sec:"C", short:"Tech comfort",
+  {id:"q14", sec:"C", short:"Tech comfort",
    q:"How confident are you with technology, such as a CRM and running a few systems at once?",
    opts:["I pick up new systems quickly","Confident, I have used a CRM before","I get there with some training","Not confident yet, but willing to learn","I find technology difficult"]},
 
-  {id:"q16", sec:"D", short:"Qualifications",
+  {id:"q15", sec:"D", short:"Qualifications",
    q:"Where are you up to with your qualifications?",
    opts:["I hold a current Cert IV in Finance and Mortgage Broking","I hold a Diploma as well","I am studying the Cert IV now","I have not started, but I am happy to study while working","I am not sure what I need yet"]},
 
-  {id:"q17", sec:"D", short:"Availability",
+  {id:"q16", sec:"D", short:"Availability",
    q:"Is there anything we should know about your availability, such as set hours or other commitments?",
    opts:["Fully available, no restrictions","Mostly flexible, with a few fixed commitments","I need set hours each week","I have study or a side project underway","I have a few things to sort out first"]},
 
-  {id:"q18", sec:"D", short:"Two to three year goal",
+  {id:"q17", sec:"D", short:"Two to three year goal",
    q:"Where would you like to be in two or three years?",
    opts:["Running my own book of clients","Leading a team","Earning well, the title does not matter","Owning a business","Somewhere stable and steady"]},
 
-  {id:"q19", sec:"D", short:"Why broking",
+  {id:"q18", sec:"D", short:"Why broking",
    q:"What draws you to finance broking?",
    opts:["The earning potential","Helping people get their finance sorted","I know people doing well in it","I am ready for a career change","I enjoy cars and doing deals","I am still weighing up my options"]},
 
-  {id:"q20", sec:"D", short:"Start timing",
+  {id:"q19", sec:"D", short:"Start timing",
    q:"Is there anything that would stop you starting in the next few weeks?",
    opts:["I can start straight away","One week notice","Two weeks notice","Four weeks notice","I have a holiday already booked","I have a few things to sort out first"]}
 ];
@@ -230,8 +225,8 @@ function toast(msg){
   t._h = setTimeout(function(){ t.classList.remove("on"); }, 1900);
 }
 
-function ans(id, isMonth){
-  if(!state.answers[id]) state.answers[id] = isMonth ? {month:"", other:""} : {picked:[], other:""};
+function ans(id){
+  if(!state.answers[id]) state.answers[id] = {picked:[], other:""};
   return state.answers[id];
 }
 
@@ -525,7 +520,7 @@ function renderIntro(){
     '<div class="card">' +
       '<div class="sticker">Around ten minutes</div>' +
       '<h1>Before we have a chat, tell us a bit about you</h1>' +
-      '<p class="hint">Only twenty questions, and there are no right or wrong answers. Take a breath and answer honestly, there is no judgement here.</p>' +
+      '<p class="hint">Only nineteen questions, and there are no right or wrong answers. Take a breath and answer honestly, there is no judgement here.</p>' +
       '<label class="small" for="nameIn">Your full name</label>' +
       '<input type="text" id="nameIn" autocomplete="name" placeholder="First and last">' +
     '</div>';
@@ -533,31 +528,9 @@ function renderIntro(){
   $("nameIn").addEventListener("input", function(){ state.name = this.value; saveDraft(); refreshChrome(); });
 }
 
-function renderMonth(qi){
-  var q = QUESTIONS[qi], sec = SECTIONS[q.sec], a = ans(q.id, true);
-  var opts = '<option value="">Pick a month</option>';
-  for(var m=0;m<12;m++) opts += '<option value="' + MONTHS[m] + '">' + MONTHS[m] + '</option>';
-  $("screen").innerHTML =
-    '<div class="card">' +
-      '<div class="sticker"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
-      '<h1>' + esc(q.q) + '</h1>' +
-      '<p class="hint">The month is enough, we do not need the date.</p>' +
-      '<select id="monthIn">' + opts + '</select>' +
-      '<label class="small" for="otherIn">Anything you would like to add</label>' +
-      '<textarea id="otherIn" placeholder="Optional"></textarea>' +
-    '</div>';
-  $("monthIn").value = a.month || "";
-  $("monthIn").addEventListener("change", function(){ a.month = this.value; saveDraft(); });
-  var other = $("otherIn");
-  other.value = a.other || "";
-  other.addEventListener("input", function(){ a.other = this.value; saveDraft(); });
-  attachTidy("otherIn", function(v){ a.other = v; saveDraft(); });
-}
-
 function renderQuestion(qi){
   var q = QUESTIONS[qi];
-  if(q.type === "month"){ renderMonth(qi); return; }
-  var sec = SECTIONS[q.sec], a = ans(q.id, false);
+  var sec = SECTIONS[q.sec], a = ans(q.id);
   var chipsHtml = "";
   for(var i=0;i<q.opts.length;i++){
     var on = a.picked.indexOf(q.opts[i]) !== -1;
@@ -599,8 +572,7 @@ function renderReview(){
     var q = QUESTIONS[i], a = state.answers[q.id];
     var val = "";
     if(a){
-      if(q.type === "month") val = esc(a.month || "");
-      else if(a.picked && a.picked.length) val = esc(a.picked.join(" \u00b7 "));
+      if(a.picked && a.picked.length) val = esc(a.picked.join(" \u00b7 "));
       if(a.other && a.other.trim()) val += (val ? "<br>" : "") + esc(a.other);
     }
     html += '<li><div class="q">' + (i+1) + '. ' + esc(q.short) + '</div><div class="a">' + (val || '<em>Skipped</em>') + '</div></li>';
@@ -717,7 +689,7 @@ function buildPayload(){
   var flat = { name:state.name, submitted:new Date().toISOString() };
   for(var i=0;i<QUESTIONS.length;i++){
     var q = QUESTIONS[i], a = state.answers[q.id] || {};
-    var picked = q.type === "month" ? (a.month || "") : ((a.picked || []).join(", "));
+    var picked = (a.picked || []).join(", ");
     var own = (a.other || "").trim();
     var val = picked;
     if(own) val += (val ? "\n\n" : "") + own;
