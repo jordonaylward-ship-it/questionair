@@ -174,35 +174,39 @@ var QUESTIONS = [
    q:"What is your sales background?",
    opts:["Car sales","Retail","Call centre or phone sales","Real estate","Finance or broking","Door to door or field sales","No sales experience yet, but I am keen"]},
 
-  {id:"q12", sec:"C", short:"Taking feedback",
+  {id:"q12", sec:"C", short:"Client goes quiet",
+   q:"A client goes quiet on you after showing real interest. What do you do?",
+   opts:["Call them, they might just be busy","Send a text or email and wait for a reply","Give them space and follow up in a few days","Move on, if they want it they will come back","Keep at it until I get a straight answer either way"]},
+
+  {id:"q13", sec:"C", short:"Taking feedback",
    q:"How do you respond when someone gives you feedback on your work?",
    opts:["I take it on board straight away","I listen first, then ask questions","I need a moment, but I come around","I can be defensive at first","It depends who it comes from"]},
 
-  {id:"q13", sec:"C", short:"Process or own way",
+  {id:"q14", sec:"C", short:"Process or own way",
    q:"Do you prefer following a proven process, or working things out your own way?",
    opts:["Give me the process and I will follow it","Process first, then I adapt it","A mix of both","I prefer my own approach","I do not like being boxed in"]},
 
-  {id:"q14", sec:"C", short:"Tech comfort",
+  {id:"q15", sec:"C", short:"Tech comfort",
    q:"How confident are you with technology, such as a CRM and running a few systems at once?",
    opts:["I pick up new systems quickly","Confident, I have used a CRM before","I get there with some training","Not confident yet, but willing to learn","I find technology difficult"]},
 
-  {id:"q15", sec:"D", short:"Qualifications",
+  {id:"q16", sec:"D", short:"Qualifications",
    q:"Where are you up to with your qualifications?",
    opts:["I hold a current Cert IV in Finance and Mortgage Broking","I hold a Diploma as well","I am studying the Cert IV now","I have not started, but I am happy to study while working","I am not sure what I need yet"]},
 
-  {id:"q16", sec:"D", short:"Availability",
+  {id:"q17", sec:"D", short:"Availability",
    q:"Is there anything we should know about your availability, such as set hours or other commitments?",
    opts:["Fully available, no restrictions","Mostly flexible, with a few fixed commitments","I need set hours each week","I have study or a side project underway","I have a few things to sort out first"]},
 
-  {id:"q17", sec:"D", short:"Two to three year goal",
+  {id:"q18", sec:"D", short:"Two to three year goal",
    q:"Where would you like to be in two or three years?",
    opts:["Running my own book of clients","Leading a team","Earning well, the title does not matter","Owning a business","Somewhere stable and steady"]},
 
-  {id:"q18", sec:"D", short:"Why broking",
+  {id:"q19", sec:"D", short:"Why broking",
    q:"What draws you to finance broking?",
    opts:["The earning potential","Helping people get their finance sorted","I know people doing well in it","I am ready for a career change","I enjoy cars and doing deals","I am still weighing up my options"]},
 
-  {id:"q19", sec:"D", short:"Start timing",
+  {id:"q20", sec:"D", short:"Start timing",
    q:"Is there anything that would stop you starting in the next few weeks?",
    opts:["I can start straight away","One week notice","Two weeks notice","Four weeks notice","I have a holiday already booked","I have a few things to sort out first"]}
 ];
@@ -520,7 +524,7 @@ function renderIntro(){
     '<div class="card">' +
       '<div class="sticker">Around ten minutes</div>' +
       '<h1>Before we have a chat, tell us a bit about you</h1>' +
-      '<p class="hint">Only nineteen questions, and there are no right or wrong answers. Take a breath and answer honestly, there is no judgement here.</p>' +
+      '<p class="hint">Only twenty questions, and there are no right or wrong answers. Take a breath and answer honestly, there is no judgement here.</p>' +
       '<label class="small" for="nameIn">Your full name</label>' +
       '<input type="text" id="nameIn" autocomplete="name" placeholder="First and last">' +
     '</div>';
