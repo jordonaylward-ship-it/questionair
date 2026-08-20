@@ -3,87 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#FBF7F2">
+<meta name="theme-color" content="#FFFFFF">
 <title>A few questions</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FBF7F2; --card:#FFFFFF; --ink:#3A3542; --muted:#8A8496; --line:#EDE6DC;
-  --lilac:#C9B8F0; --blush:#F5C3D4; --peach:#F8CDA8; --mint:#BFE6D2;
-  --lilac-soft:#F0EAFB; --blush-soft:#FCEDF3; --peach-soft:#FDF0E2; --mint-soft:#E9F7F0;
-  --grad:linear-gradient(90deg,#C9B8F0 0%,#F5C3D4 50%,#F8CDA8 100%);
+  --paper:#FAFAFA; --card:#FFFFFF; --ink:#262626; --muted:#8E8E8E; --line:#DBDBDB;
+  --blue:#0095F6; --soft:#EFEFEF;
+  --grad:linear-gradient(90deg,#833AB4 0%,#E1306C 55%,#F77737 100%);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
-body{background:var(--paper);color:var(--ink);font-family:"Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-.shell{display:flex;justify-content:center;padding:0 20px}
-.main{width:100%;max-width:680px;padding:20px 0 140px}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0 18px}
-.logo{font-family:"Sora",sans-serif;font-weight:700;font-size:clamp(15px,4vw,19px);letter-spacing:-0.4px;white-space:nowrap}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+.shell{display:flex;justify-content:center;padding:0 16px}
+.main{width:100%;max-width:620px;padding:18px 0 140px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 16px}
+.logo{font-weight:700;font-size:clamp(16px,4vw,20px);letter-spacing:-0.5px;white-space:nowrap}
 .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .who{font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.thread{height:6px;border-radius:99px;background:var(--line);overflow:hidden;margin-bottom:8px}
+.thread{height:3px;border-radius:99px;background:var(--soft);overflow:hidden;margin-bottom:10px}
 .thread i{display:block;height:100%;background:var(--grad);border-radius:99px;width:0%;transition:width .35s ease}
-.crumb{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 26px;box-shadow:0 6px 24px rgba(58,53,66,.05)}
-.sticker{display:inline-flex;align-items:center;gap:8px;font-family:"Sora",sans-serif;font-weight:700;font-size:13px;padding:6px 14px;border-radius:99px;margin-bottom:16px;color:var(--ink)}
-.sticker.lilac{background:var(--lilac-soft)}
-.sticker.blush{background:var(--blush-soft)}
-.sticker.peach{background:var(--peach-soft)}
-.sticker.mint{background:var(--mint-soft)}
-.sticker b{font-size:15px}
-h1{font-family:"Sora",sans-serif;font-weight:600;font-size:clamp(21px,4.5vw,27px);letter-spacing:-0.4px;line-height:1.3;margin-bottom:6px}
-h2{font-family:"Sora",sans-serif;font-weight:600;font-size:17px;margin:22px 0 10px}
-.hint{font-size:14px;color:var(--muted);margin-bottom:22px}
-.body p{margin-bottom:14px}
-.body p:last-child{margin-bottom:0}
-.facts{list-style:none;margin:6px 0 20px}
-.facts li{position:relative;padding:9px 0 9px 26px;border-bottom:1px solid var(--line);font-size:15px}
+.crumb{font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 24px}
+.sticker{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:12px;padding:5px 12px;border-radius:99px;margin-bottom:14px;background:var(--soft);color:var(--ink)}
+.sticker b{font-size:13px}
+h1{font-weight:600;font-size:clamp(20px,4.4vw,25px);letter-spacing:-0.5px;line-height:1.28;margin-bottom:6px}
+h2{font-weight:600;font-size:16px;margin:20px 0 8px}
+.hint{font-size:14px;color:var(--muted);margin-bottom:20px}
+.facts{list-style:none;margin:4px 0 18px}
+.facts li{position:relative;padding:9px 0 9px 24px;border-bottom:1px solid var(--soft);font-size:14.5px}
 .facts li:last-child{border-bottom:none}
-.facts li:before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--lilac)}
-.facts b{font-weight:700}
-.chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.facts li:before{content:"";position:absolute;left:2px;top:16px;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.facts b{font-weight:600}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:18px}
 @media(max-width:560px){.chips{grid-template-columns:1fr}}
-.chip{display:flex;align-items:flex-start;gap:10px;font-family:"Karla",sans-serif;font-size:15px;font-weight:500;color:var(--ink);text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;cursor:pointer;transition:transform .12s ease,background .12s ease,border-color .12s ease}
-.chip .letter{flex:none;width:22px;height:22px;border-radius:50%;margin-top:1px;display:inline-flex;align-items:center;justify-content:center;font-family:"Sora",sans-serif;font-weight:700;font-size:11px;background:#fff;border:1.5px solid var(--line);color:var(--muted)}
-.chip:hover{transform:translateY(-1px);border-color:#D8CFE9}
-.chip:focus-visible{outline:3px solid var(--lilac);outline-offset:2px}
-.chip.on{border-color:transparent;font-weight:700}
-.chip.on .letter{background:var(--ink);border-color:var(--ink);color:#fff}
-.chip.on.c-lilac{background:var(--lilac)}
-.chip.on.c-blush{background:var(--blush)}
-.chip.on.c-peach{background:var(--peach)}
-.chip.on.c-mint{background:var(--mint)}
-label.small{display:block;font-size:13px;font-weight:700;color:var(--muted);margin-bottom:7px;letter-spacing:.3px}
-textarea,input[type=text],input[type=email],input[type=tel],select{width:100%;font-family:"Karla",sans-serif;font-size:15px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:12px 15px;resize:vertical}
-textarea{min-height:74px}
-textarea:focus,input:focus,select:focus{outline:none;border-color:var(--lilac);background:#fff}
-input[type=text],input[type=email],input[type=tel],select{margin-bottom:16px}
-.tidybar{display:flex;gap:8px;align-items:center;margin-top:8px}
-.tidybtn{font-family:"Sora",sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.2px;border:1.5px solid var(--line);background:var(--paper);color:var(--muted);border-radius:10px;padding:7px 13px;cursor:pointer;transition:all .15s}
-.tidybtn:hover{border-color:var(--lilac);color:var(--ink);background:#fff}
-.tidybtn.ghost{opacity:.75}
-.nav{position:fixed;left:0;right:0;bottom:0;background:rgba(251,247,242,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);z-index:20}
-.nav .in{max-width:680px;margin:0 auto;display:flex;gap:12px;padding:14px 20px}
-.btn{font-family:"Sora",sans-serif;font-weight:600;font-size:15px;border:none;border-radius:14px;padding:14px 22px;cursor:pointer;transition:transform .12s ease,opacity .12s ease}
-.btn:active{transform:scale(.98)}
-.btn:disabled{opacity:.45;cursor:default}
-.btn.primary{background:var(--ink);color:#fff;flex:1}
-.btn.ghost{background:transparent;color:var(--muted);border:1.5px solid var(--line)}
-.btn.big{width:100%;padding:16px}
-.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(14px);background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:11px 20px;border-radius:99px;opacity:0;pointer-events:none;transition:all .25s ease;z-index:60}
+.chip{display:flex;align-items:flex-start;gap:10px;font-family:inherit;font-size:14.5px;font-weight:400;color:var(--ink);text-align:left;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;transition:background .12s ease,border-color .12s ease}
+.chip .letter{flex:none;width:21px;height:21px;border-radius:50%;margin-top:1px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:11px;background:var(--soft);color:var(--muted)}
+.chip:hover{background:var(--paper)}
+.chip:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.chip.on{border-color:var(--ink);font-weight:600;background:var(--card)}
+.chip.on .letter{background:var(--ink);color:#fff}
+label.small{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px;letter-spacing:.2px}
+textarea,input[type=text],select{width:100%;font-family:inherit;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;resize:vertical}
+textarea{min-height:76px}
+textarea:focus,input:focus,select:focus{outline:none;border-color:var(--ink);background:#fff}
+input[type=text],select{margin-bottom:14px}
+.tidybar{display:flex;gap:14px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.tidybtn{font-family:inherit;font-size:13px;font-weight:600;color:var(--blue);background:transparent;border:none;padding:6px 0;cursor:pointer}
+.tidybtn:hover{opacity:.7}
+.tidybtn.ghost{color:var(--muted)}
+.nav{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);z-index:20}
+.nav .in{max-width:620px;margin:0 auto;display:flex;gap:10px;padding:12px 16px}
+.btn{font-family:inherit;font-weight:600;font-size:15px;border:none;border-radius:10px;padding:13px 22px;cursor:pointer;transition:opacity .12s ease}
+.btn:active{opacity:.8}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.primary{background:var(--blue);color:#fff;flex:1}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.big{width:100%;padding:14px}
+.toast{position:fixed;left:50%;bottom:92px;transform:translateX(-50%) translateY(14px);background:var(--ink);color:#fff;font-size:14px;font-weight:500;padding:11px 20px;border-radius:8px;opacity:0;pointer-events:none;transition:all .25s ease;z-index:60}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
 .review{list-style:none}
-.review li{padding:14px 0;border-bottom:1px solid var(--line)}
+.review li{padding:13px 0;border-bottom:1px solid var(--soft)}
 .review li:last-child{border-bottom:none}
-.review .q{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:4px}
-.review .a{font-size:15px}
+.review .q{font-size:12px;font-weight:600;color:var(--muted);margin-bottom:3px}
+.review .a{font-size:14.5px}
 .review .a em{color:var(--muted);font-style:normal}
-.codebox{width:100%;min-height:130px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
-.big-tick{width:64px;height:64px;border-radius:50%;background:var(--mint-soft);display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:18px}
-.err{background:var(--blush-soft);border-radius:14px;padding:14px 16px;font-size:14px;margin-bottom:18px}
+.codebox{width:100%;min-height:130px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:12px}
+.big-tick{width:58px;height:58px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:16px}
+.err{background:var(--soft);border-radius:10px;padding:14px 16px;font-size:14px;margin-bottom:16px}
 </style>
 </head>
 <body>
@@ -112,18 +102,19 @@ input[type=text],input[type=email],input[type=tel],select{margin-bottom:16px}
 "use strict";
 
 /* ══════════════════════════════════════════════════════════
-   CONFIG · put your Apps Script web app URL between the quotes
+   CONFIG · paste your Apps Script web app URL between the quotes
+   It must end in /exec
    ══════════════════════════════════════════════════════════ */
 var ENDPOINT = "";
 /* ══════════════════════════════════════════════════════════ */
 
-var DRAFT_KEY = "candidate_form_draft_v1";
+var DRAFT_KEY = "candidate_form_draft_v2";
 
 var SECTIONS = {
-  A:{name:"About you", color:"lilac"},
-  B:{name:"Drive and grit", color:"peach"},
-  C:{name:"Sales and the phone", color:"blush"},
-  D:{name:"The practical side", color:"mint"}
+  A:{name:"About you"},
+  B:{name:"Drive and grit"},
+  C:{name:"Sales and the phone"},
+  D:{name:"The practical side"}
 };
 
 var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -134,8 +125,7 @@ var QUESTIONS = [
    opts:["I'm the reliable one, I always show up","I'm the life of the party","I'm the calm one when everything goes wrong","I'm ambitious, always chasing the next thing","I'm honest and direct, I say it how it is","I'm the quiet achiever, I just get things done"]},
 
   {id:"q2", sec:"A", short:"Birth month", type:"month",
-   q:"What month were you born in?",
-   opts:[]},
+   q:"What month were you born in?", opts:[]},
 
   {id:"q3", sec:"A", short:"Outside of work",
    q:"What do you get up to outside of work?",
@@ -214,8 +204,8 @@ var TOTAL = QUESTIONS.length;
 
 /* ---------------- state ---------------- */
 
-var state = { name:"", email:"", phone:"", answers:{}, notes:"", sent:false };
-var step = -1; // -1 intro, 0..TOTAL-1 questions, TOTAL notes, TOTAL+1 review, TOTAL+2 done
+var state = { name:"", answers:{}, sent:false };
+var step = -1; // -1 intro, 0..TOTAL-1 questions, TOTAL review, TOTAL+1 done
 
 function $(id){ return document.getElementById(id); }
 function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
@@ -249,11 +239,11 @@ function loadDraft(){
   }catch(e){ return false; }
 }
 
-/* ---------------- tidy up · plain rules, no AI ---------------- */
+/* ══════════ tidy up · offline spelling and grammar ══════════ */
 
 var TIDY_WORDS = {
-  "u":"you","ur":"your","urs":"yours","r":"are","n":"and","y":"why","k":"okay","ok":"okay",
-  "b4":"before","bc":"because","cuz":"because","coz":"because","becuase":"because","becasue":"because",
+  "u":"you","ur":"your","urs":"yours","r":"are","n":"and","y":"why","k":"okay",
+  "b4":"before","bc":"because","cuz":"because","coz":"because",
   "prolly":"probably","probs":"probably","thru":"through","tho":"though","altho":"although",
   "gonna":"going to","wanna":"want to","gotta":"got to","kinda":"kind of","sorta":"sort of",
   "outta":"out of","lotta":"lot of","dunno":"don't know","cmon":"come on",
@@ -264,43 +254,173 @@ var TIDY_WORDS = {
   "wont":"won't","isnt":"isn't","arent":"aren't","wasnt":"wasn't","werent":"weren't",
   "hasnt":"hasn't","havent":"haven't","hadnt":"hadn't","thats":"that's","whats":"what's",
   "hes":"he's","shes":"she's","theyre":"they're","theyve":"they've","theres":"there's",
-  "youre":"you're","youve":"you've","youll":"you'll","weve":"we've",
-  "lets":"let's","aint":"isn't","whos":"who's",
-  "teh":"the","adn":"and","hte":"the","taht":"that","tehy":"they",
-  "recieve":"receive","recieved":"received","seperate":"separate","seperately":"separately",
-  "definately":"definitely","definatly":"definitely","defiantly":"definitely",
-  "occured":"occurred","untill":"until","allready":"already",
-  "acheive":"achieve","acheived":"achieved","beleive":"believe","beleived":"believed",
-  "buisness":"business","busness":"business","calender":"calendar","carrer":"career",
-  "commited":"committed","comming":"coming","curently":"currently",
-  "enviroment":"environment","experiance":"experience","experianced":"experienced",
-  "familar":"familiar","finacial":"financial","goverment":"government","happend":"happened",
-  "independant":"independent","intrested":"interested","intresting":"interesting",
-  "knowlege":"knowledge","maintainance":"maintenance","managment":"management",
-  "neccessary":"necessary","necesary":"necessary","noticable":"noticeable",
-  "occassion":"occasion","oppurtunity":"opportunity","opportunty":"opportunity",
-  "paticular":"particular","persue":"pursue","prefered":"preferred","probaly":"probably",
-  "proffesional":"professional","profesional":"professional","reccomend":"recommend",
-  "reccommend":"recommend","refered":"referred","relevent":"relevant",
-  "responsable":"responsible","succesful":"successful","successfull":"successful",
-  "sucessful":"successful","suprise":"surprise","tommorow":"tomorrow","tomorow":"tomorrow",
-  "truely":"truly","unfortunatly":"unfortunately","usualy":"usually","wich":"which",
-  "writting":"writing","yestarday":"yesterday","strenght":"strength","lenght":"length",
-  "recomended":"recommended","comfertable":"comfortable","comftable":"comfortable",
-  "commision":"commission","commisions":"commissions","comission":"commission",
-  "settlment":"settlement","settlments":"settlements","aggregater":"aggregator",
-  "dealship":"dealership","dealships":"dealerships","cetificate":"certificate",
-  "qualifcation":"qualification","qualifcations":"qualifications","avaliable":"available",
-  "availble":"available","availabilty":"availability","imediate":"immediate",
-  "immediatly":"immediately","salery":"salary","intrest":"interest",
-  "aplication":"application","aplications":"applications",
+  "youre":"you're","youve":"you've","youll":"you'll","weve":"we've","whos":"who's",
+  "lets":"let's","aint":"isn't","defiantly":"definitely","alright":"all right",
   "organize":"organise","organized":"organised","organizing":"organising",
   "organization":"organisation","realize":"realise","realized":"realised",
   "recognize":"recognise","recognized":"recognised","apologize":"apologise",
   "specialize":"specialise","specialized":"specialised","prioritize":"prioritise",
   "analyze":"analyse","analyzed":"analysed","center":"centre","favorite":"favourite",
-  "behavior":"behaviour","color":"colour"
+  "behavior":"behaviour","color":"colour","labor":"labour","honor":"honour"
 };
+
+var DICT_RAW =
+"a able about above accept according account accounts accountant achieve achieved achieving across act " +
+"action actions active actually add added addition address advance advances advice advise advised after " +
+"afternoon again against age aged agency agent ago agree agreed ahead all allow allowed almost alone along " +
+"already also although always am among amount an and another answer answered any anyone anything anyway " +
+"apart apply applied application applications appointment appointments approach approval approve approved " +
+"april are area around arrange arranged arrive as ask asked asking asset assets assist assisted at attend " +
+"attention august australia australian available availability away back background bad balance bank banking " +
+"base based basic be became because become been before began begin beginning behind being believe below best " +
+"better between big bit both bring brings broker brokers brokerage brokerages broking build building built " +
+"business businesses busy but buy buyer buying by call called caller calling calls came can capable car care " +
+"career careers cars case cash cause centre certain certainly certificate challenge challenges chance change " +
+"changed chase chased check checked choice choose chose clear clearly client clients close closed closer " +
+"closing comfortable coming commercial commission commissions commit commitment committed common communicate " +
+"communication community company companies compare compared complete completed compliance concern confidence " +
+"confident consider considered consistent contact contacted continue continued contract contracts control " +
+"conversation conversion convert converted copy correct cost costs could country couple course cover covered " +
+"create created credit crm current currently customer customers cut daily data date day days deal deals " +
+"dealer dealership dealerships decide decided decision definitely deliver delivered department depend depends " +
+"deposit describe detail details determine develop developed did difference different difficult diploma " +
+"direct directly discuss discussed do document documents does doing done door down drive driven driving due " +
+"during each earlier early earn earned earning easier easy education effort either else email emails end " +
+"ended enjoy enjoyed enough enquiry enquiries ensure entire environment equipment especially even evening " +
+"ever every everyone everything exactly example excellent except experience experienced explain explained " +
+"extra face fact fair fall family fast faster feedback feel feeling few field figure file files fill filled " +
+"finally finance finances financial find finding fine finish finished first fit five flexible focus follow " +
+"followed following for form forms fortnight forward found four friday friend friends from front full fully " +
+"further future gain game gave general genuine genuinely get gets getting give given giving glad go goal " +
+"goals goes going gone good got great grew group grow growing growth had half hand handle handled happen " +
+"happened happy hard harder has have having he head hear heard help helped helping her here high higher him " +
+"himself his hit hold holding home honest honestly hope hoping hour hours house how however huge hundred " +
+"husband idea ideas if immediate immediately important improve improved in include included income increase " +
+"industry information inside instead insurance interest interested interesting interview into invoice is " +
+"issue issues it its itself january job jobs join joined july jump june just keen keep keeping kept key kind " +
+"knew know knowledge known lack land large last late later lead leader leads learn learned learning leave " +
+"leaving led left lender lenders lending less let level licence life light like liked likely line list " +
+"listen listened little live lived load loan loans local long longer look looked looking lose loss lost lot " +
+"love low made main maintain major make makes making manage managed management manager managers many march " +
+"market marketing match matter may maybe me mean means meant meet meeting meetings member mention mentioned " +
+"met might mind minute minutes miss missed mistake mobile moment monday money month monthly months more " +
+"morning most mostly mother motivated move moved moving much must my myself name names near need needed " +
+"needs never new news next nice night no none nor not note notes nothing notice november now number numbers " +
+"october of off offer offered office often okay old on once one online only open opened operation " +
+"opportunity opportunities option options or order other others our out outcome outside over overall own " +
+"owner pace paid paperwork part particular parties partner partners party pass passed past pay paying " +
+"payment payments people per perfect perform performance perhaps period person personal phone phones pick " +
+"picked place plan planning play please point points policy poor position positive possible potential power " +
+"practice prefer preferred prepare prepared present pressure pretty previous price prices probably problem " +
+"problems process processes product products professional profit program progress project projects proper " +
+"properly provide provided public pull pulled purchase push put quality question questions quick quickly " +
+"quiet quite quote quoted rate rates rather reach reached read ready real realise realistic really reason " +
+"reasons receive received recent recently recommend recommended record records refer referral referrals " +
+"referred refinance regular regularly relationship relationships relevant reliable remember remote report " +
+"reported reports request require required requirement research respect respond response responsible rest " +
+"result results retail return review reviewed right rise risk role roles room run running sale sales same " +
+"saturday save saved saw say saying says school second section see seeing seem seen self sell seller " +
+"selling send sending sense sent september series serious seriously service services set settle settled " +
+"settlement settlements seven several share shared she short should show showed side sign signed similar " +
+"simple simply since single sit site situation six size skill skills slow small smart so social sold solid " +
+"solution solutions some someone something sometimes soon sorry sort sound sounds speak special specific " +
+"spend spent spot staff stage stand standard start started starting state stay step steps still stock stop " +
+"story straight strategy strong stronger structure struggle student study studying stuff style subject " +
+"success successful such sudden suggest suit suitable sunday supply support supported sure system systems " +
+"table take taken taking talk talked talking target targets task team teams tech technology tell telling " +
+"ten term terms test than thank thanks that the their them themselves then there these they thing things " +
+"think thinking third this those though thought three through thursday time times today together told " +
+"tomorrow tonight too took top total touch toward towards track trade trading train trained training " +
+"transfer travel true truly trust try trying tuesday turn turned twenty two type types under understand " +
+"understanding until up update updated upon us use used useful using usually value various vehicle vehicles " +
+"very view visit voice wait waiting walk want wanted wanting warranty was watch water way ways we website " +
+"wednesday week weekend weekly weeks welcome well went were what whatever when where whether which while " +
+"who whole whom whose why wide wife will willing win winning wish with within without woman women won " +
+"wonder word words work worked worker working works world worry worth would write writing written wrong " +
+"year years yes yesterday yet you young your yourself " +
+"wants needs works looks feels seems makes takes gives goes comes keeps helps means finds shows tells " +
+"builds brings holds leaves loves likes lives moves opens plays reads runs sells sends serves sets " +
+"speaks spends stands starts stays stops talks thinks tries turns uses walks watches wins writes " +
+"strength strengths weakness weaknesses ability abilities attitude effort efforts habit habits " +
+"honesty integrity patience passion passionate driven motivation focused organised reliable " +
+"punctual proactive resilient adaptable approachable friendly outgoing confident capable " +
+"achievement achievements challenge challenging rewarding demanding stressful pressure deadline " +
+"deadlines schedule scheduled priority priorities workload multitask juggle juggling " +
+"knock knocked knockback knockbacks rejection rejections objection objections " +
+"pipeline followup follow-up onboarding compliance regulation regulations licensing accredited " +
+"accreditation accreditations qualification qualifications certificate certificates diploma " +
+"broker broking lender lending borrower borrowers repayment repayments interest deposit " +
+"vehicle vehicles equipment machinery caravan boat truck trailer motorbike " +
+"dealership dealerships salesperson salespeople manager managers management managed managing " +
+"commission commissions bonus bonuses salary wage wages earnings income " +
+"remote flexible flexibility hybrid office home desk phone phones call calls calling " +
+"crm system systems software platform platforms technology tech digital " +
+"weekend weekends morning mornings afternoon afternoons evening evenings " +
+"family families kids children partner husband wife friends mates " +
+"gym fitness training sport sports football soccer cricket surfing camping fishing beach " +
+"cooking reading gaming travel travelling music movies " +
+"different differently little bigger smaller better best worse worst most least " +
+"myself yourself himself herself ourselves themselves " +
+"absolutely completely totally certainly obviously clearly honestly personally generally " +
+"basically simply mainly mostly rarely often always never sometimes " +
+"whatever whenever wherever whoever however therefore because although unless " +
+"between among during before after while since until " +
+"anything something nothing everything anyone someone everyone nobody " +
+"another others another everybody somebody " +
+"believe believed believing consider considering understood understanding " +
+"experience experienced experiences opportunity opportunities responsibility responsibilities " +
+"communication communicate communicated communicating negotiation negotiate negotiating " +
+"presentation present presenting professional professionally " +
+"successful successfully achieve achievement achieved " +
+"improve improvement improvements develop development developing " +
+"support supporting supported service servicing customer customers client clients " +
+"relationship relationships network networking referral referrals " +
+"target targets goal goals result results outcome outcomes performance " +
+"quality quantity volume value values standard standards " +
+"process procedure procedures policy policies guideline guidelines " +
+"training trained trainer mentor mentoring coach coaching " +
+"leader leadership leading team teams teamwork collaborate collaboration";
+
+var DICT = {};
+(function(){
+  var arr = DICT_RAW.split(" ");
+  for(var i=0;i<arr.length;i++) if(arr[i]) DICT[arr[i]] = 1;
+})();
+
+var ALPHA = "abcdefghijklmnopqrstuvwxyz";
+
+/* every word one edit away: drop a letter, swap two neighbours, change a letter, add a letter */
+function editsOnce(w){
+  var out = [], i, c;
+  for(i=0;i<w.length;i++) out.push(w.slice(0,i) + w.slice(i+1));
+  for(i=0;i<w.length-1;i++) out.push(w.slice(0,i) + w.charAt(i+1) + w.charAt(i) + w.slice(i+2));
+  for(i=0;i<w.length;i++) for(c=0;c<26;c++) out.push(w.slice(0,i) + ALPHA.charAt(c) + w.slice(i+1));
+  for(i=0;i<=w.length;i++) for(c=0;c<26;c++) out.push(w.slice(0,i) + ALPHA.charAt(c) + w.slice(i));
+  return out;
+}
+
+/* returns a correction, or "" when it is not confident enough to touch it */
+function correctWord(low){
+  if(low.length < 4) return "";
+  if(DICT[low]) return "";
+  var cands = editsOnce(low), hits = {}, list = [], i;
+  for(i=0;i<cands.length;i++){
+    var c = cands[i];
+    if(DICT[c] && !hits[c]){ hits[c] = 1; list.push(c); }
+  }
+  if(list.length === 1) return list[0];
+  if(list.length > 1){
+    list.sort(function(a,b){ return Math.abs(a.length-low.length) - Math.abs(b.length-low.length); });
+    if(Math.abs(list[0].length-low.length) < Math.abs(list[1].length-low.length)) return list[0];
+  }
+  return "";
+}
+
+function matchCase(orig, fixed){
+  if(orig === orig.toUpperCase() && orig.length > 1) return fixed.toUpperCase();
+  if(orig.charAt(0) === orig.charAt(0).toUpperCase()) return fixed.charAt(0).toUpperCase() + fixed.slice(1);
+  return fixed;
+}
 
 var TIDY_PROPER = {
   "monday":"Monday","tuesday":"Tuesday","wednesday":"Wednesday","thursday":"Thursday",
@@ -308,11 +428,9 @@ var TIDY_PROPER = {
   "january":"January","february":"February","march":"March","april":"April",
   "june":"June","july":"July","august":"August","september":"September",
   "october":"October","november":"November","december":"December",
-  "docusign":"DocuSign","equifax":"Equifax",
-  "brisbane":"Brisbane","queensland":"Queensland","australia":"Australia",
-  "australian":"Australian","aussie":"Aussie","toyota":"Toyota","suncorp":"Suncorp",
-  "abn":"ABN","crm":"CRM","asic":"ASIC","kpi":"KPI","kpis":"KPIs","gst":"GST",
-  "fbaa":"FBAA","ceo":"CEO"
+  "australia":"Australia","australian":"Australian","aussie":"Aussie",
+  "brisbane":"Brisbane","sydney":"Sydney","melbourne":"Melbourne","queensland":"Queensland",
+  "abn":"ABN","crm":"CRM","gst":"GST","asic":"ASIC","kpi":"KPI","kpis":"KPIs"
 };
 
 function tidyEsc(w){ return w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
@@ -320,24 +438,35 @@ function tidyEsc(w){ return w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
 function tidyText(raw){
   if(!raw) return "";
   var t = String(raw);
+
   t = t.replace(/[\u2018\u2019\u02BC]/g, "'").replace(/[\u201C\u201D]/g, '"');
   t = t.replace(/\r\n?/g, "\n");
   t = t.split("\n").map(function(l){ return l.replace(/[ \t]+/g, " ").trim(); }).join("\n");
   t = t.replace(/\n{3,}/g, "\n\n").trim();
   if(!t) return "";
+
   t = t.replace(/\.{4,}/g, "...").replace(/([!?]){2,}/g, "$1").replace(/,{2,}/g, ",");
   t = t.replace(/\s+([,.!?;:])/g, "$1");
   t = t.replace(/([,;:])(?=[^\s\d])/g, "$1 ");
   t = t.replace(/([.!?])(?=[A-Za-z])/g, "$1 ");
   t = t.replace(/\(\s+/g, "(").replace(/\s+\)/g, ")");
+
   for(var w in TIDY_WORDS){
     if(!TIDY_WORDS.hasOwnProperty(w)) continue;
     t = t.replace(new RegExp("\\b" + tidyEsc(w) + "\\b", "gi"), TIDY_WORDS[w]);
   }
-  for(var p in TIDY_PROPER){
-    if(!TIDY_PROPER.hasOwnProperty(p)) continue;
-    t = t.replace(new RegExp("\\b" + tidyEsc(p) + "\\b", "gi"), TIDY_PROPER[p]);
+
+  t = t.replace(/[A-Za-z]+/g, function(word){
+    var low = word.toLowerCase();
+    var fix = correctWord(low);
+    return fix ? matchCase(word, fix) : word;
+  });
+
+  for(var pn in TIDY_PROPER){
+    if(!TIDY_PROPER.hasOwnProperty(pn)) continue;
+    t = t.replace(new RegExp("\\b" + tidyEsc(pn) + "\\b", "gi"), TIDY_PROPER[pn]);
   }
+
   t = t.replace(/\bi\b/g, "I");
   t = t.replace(/\bi'/g, "I'");
   t = t.replace(/\ba ([aeiouAEIOU])/g, "an $1");
@@ -347,6 +476,7 @@ function tidyText(raw){
   });
   t = t.replace(/(^|[.!?]\s+|\n\s*)([a-z])/g, function(m, lead, ch){ return lead + ch.toUpperCase(); });
   if(!/[.!?:]$/.test(t)) t += ".";
+
   return t;
 }
 
@@ -356,17 +486,17 @@ function attachTidy(id, setter){
   var bar = document.createElement("div");
   bar.className = "tidybar";
   var btn = document.createElement("button");
-  btn.type = "button"; btn.className = "tidybtn"; btn.textContent = "Tidy up my spelling";
+  btn.type = "button"; btn.className = "tidybtn"; btn.textContent = "Check my spelling";
   var undo = document.createElement("button");
   undo.type = "button"; undo.className = "tidybtn ghost"; undo.textContent = "Undo"; undo.style.display = "none";
   var prev = "";
   btn.addEventListener("click", function(){
     var before = ta.value;
-    if(!before.trim()){ toast("Nothing to tidy yet"); return; }
+    if(!before.trim()){ toast("Nothing to check yet"); return; }
     var after = tidyText(before);
-    if(after === before){ toast("Already reads fine"); return; }
+    if(after === before){ toast("Looks good already"); return; }
     prev = before; ta.value = after; setter(after);
-    undo.style.display = ""; toast("Tidied up");
+    undo.style.display = ""; toast("Cleaned up");
   });
   undo.addEventListener("click", function(){
     if(!prev) return;
@@ -381,12 +511,10 @@ function attachTidy(id, setter){
 function renderIntro(){
   $("screen").innerHTML =
     '<div class="card">' +
-      '<div class="sticker lilac">About ten minutes</div>' +
+      '<div class="sticker">About ten minutes</div>' +
       '<h1>Before we have a chat, tell us a bit about you</h1>' +
       '<p class="hint">Twenty quick questions. No right answers, we just want a feel for how you work.</p>' +
-      '<div class="body">' +
-        '<h2>What the role looks like</h2>' +
-      '</div>' +
+      '<h2>What the role looks like</h2>' +
       '<ul class="facts">' +
         '<li>Writing asset finance, working leads end to end</li>' +
         '<li><b>Commission based, on your own ABN.</b> Not a salaried position</li>' +
@@ -395,21 +523,12 @@ function renderIntro(){
         '<li>Fully remote, with a weekly catch up</li>' +
         '<li>No Cert IV yet is fine, you can study while you work</li>' +
       '</ul>' +
-      '<p class="hint" style="margin-bottom:22px">If commission based work is not for you, no hard feelings, and thanks for your time.</p>' +
-      '<label class="small" for="nameIn">Your name</label>' +
+      '<p class="hint" style="margin-bottom:20px">If commission based work is not for you, no hard feelings, and thanks for your time.</p>' +
+      '<label class="small" for="nameIn">Your full name</label>' +
       '<input type="text" id="nameIn" autocomplete="name" placeholder="First and last">' +
-      '<label class="small" for="emailIn">Email</label>' +
-      '<input type="email" id="emailIn" autocomplete="email" placeholder="you@example.com">' +
-      '<label class="small" for="phoneIn">Mobile</label>' +
-      '<input type="tel" id="phoneIn" autocomplete="tel" placeholder="04...">' +
     '</div>';
   $("nameIn").value = state.name;
-  $("emailIn").value = state.email;
-  $("phoneIn").value = state.phone;
-  function bind(id, key){
-    $(id).addEventListener("input", function(){ state[key] = this.value; saveDraft(); refreshChrome(); });
-  }
-  bind("nameIn","name"); bind("emailIn","email"); bind("phoneIn","phone");
+  $("nameIn").addEventListener("input", function(){ state.name = this.value; saveDraft(); refreshChrome(); });
 }
 
 function renderMonth(qi){
@@ -418,7 +537,7 @@ function renderMonth(qi){
   for(var m=0;m<12;m++) opts += '<option value="' + MONTHS[m] + '">' + MONTHS[m] + '</option>';
   $("screen").innerHTML =
     '<div class="card">' +
-      '<div class="sticker ' + sec.color + '"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
+      '<div class="sticker"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
       '<h1>' + esc(q.q) + '</h1>' +
       '<p class="hint">Just the month, not the date.</p>' +
       '<select id="monthIn">' + opts + '</select>' +
@@ -440,12 +559,12 @@ function renderQuestion(qi){
   var chipsHtml = "";
   for(var i=0;i<q.opts.length;i++){
     var on = a.picked.indexOf(q.opts[i]) !== -1;
-    chipsHtml += '<button type="button" class="chip c-' + sec.color + (on ? " on" : "") + '" data-opt="' + esc(q.opts[i]) + '">' +
+    chipsHtml += '<button type="button" class="chip' + (on ? " on" : "") + '" data-opt="' + esc(q.opts[i]) + '">' +
       '<span class="letter">' + String.fromCharCode(65 + i) + '</span><span>' + esc(q.opts[i]) + '</span></button>';
   }
   $("screen").innerHTML =
     '<div class="card">' +
-      '<div class="sticker ' + sec.color + '"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
+      '<div class="sticker"><b>' + (qi+1) + '</b> &middot; ' + esc(sec.name) + '</div>' +
       '<h1>' + esc(q.q) + '</h1>' +
       '<p class="hint">Pick whichever fit. More than one is fine, and there is room below to say it in your own words.</p>' +
       '<div class="chips">' + chipsHtml + '</div>' +
@@ -459,49 +578,30 @@ function renderQuestion(qi){
       var idx = a.picked.indexOf(opt);
       if(idx === -1){ a.picked.push(opt); this.classList.add("on"); }
       else { a.picked.splice(idx,1); this.classList.remove("on"); }
-      saveDraft(); refreshChrome();
+      saveDraft();
     });
   }
   var other = $("otherIn");
   other.value = a.other || "";
-  other.addEventListener("input", function(){ a.other = this.value; saveDraft(); refreshChrome(); });
-  attachTidy("otherIn", function(v){ a.other = v; saveDraft(); refreshChrome(); });
-}
-
-function renderNotes(){
-  $("screen").innerHTML =
-    '<div class="card">' +
-      '<div class="sticker mint">Last one</div>' +
-      '<h1>Anything else we should know?</h1>' +
-      '<p class="hint">Questions about the role, things the questions did not cover, whatever you reckon is worth saying.</p>' +
-      '<textarea id="notesIn" style="min-height:150px" placeholder="Optional"></textarea>' +
-    '</div>';
-  var t = $("notesIn");
-  t.value = state.notes || "";
-  t.addEventListener("input", function(){ state.notes = this.value; saveDraft(); });
-  attachTidy("notesIn", function(v){ state.notes = v; saveDraft(); });
+  other.addEventListener("input", function(){ a.other = this.value; saveDraft(); });
+  attachTidy("otherIn", function(v){ a.other = v; saveDraft(); });
 }
 
 function renderReview(){
   var html = '<div class="card">' +
-    '<div class="sticker lilac">Nearly done</div>' +
+    '<div class="sticker">Nearly done</div>' +
     '<h1>Have a quick read before you send</h1>' +
     '<p class="hint">Tap Back if you want to change anything.</p><ul class="review">';
   html += '<li><div class="q">Name</div><div class="a">' + (esc(state.name) || '<em>Not filled in</em>') + '</div></li>';
-  html += '<li><div class="q">Email</div><div class="a">' + (esc(state.email) || '<em>Not filled in</em>') + '</div></li>';
-  html += '<li><div class="q">Mobile</div><div class="a">' + (esc(state.phone) || '<em>Not filled in</em>') + '</div></li>';
   for(var i=0;i<QUESTIONS.length;i++){
     var q = QUESTIONS[i], a = state.answers[q.id];
     var val = "";
     if(a){
-      if(q.type === "month") val = a.month || "";
-      else if(a.picked && a.picked.length) val = a.picked.join(" &middot; ");
+      if(q.type === "month") val = esc(a.month || "");
+      else if(a.picked && a.picked.length) val = esc(a.picked.join(" \u00b7 "));
       if(a.other && a.other.trim()) val += (val ? "<br>" : "") + esc(a.other);
     }
     html += '<li><div class="q">' + (i+1) + '. ' + esc(q.short) + '</div><div class="a">' + (val || '<em>Skipped</em>') + '</div></li>';
-  }
-  if(state.notes && state.notes.trim()){
-    html += '<li><div class="q">Anything else</div><div class="a">' + esc(state.notes) + '</div></li>';
   }
   html += '</ul></div>';
   $("screen").innerHTML = html;
@@ -519,7 +619,7 @@ function renderDone(ok, payload){
   } else {
     host.innerHTML =
       '<div class="card">' +
-        '<div class="sticker peach">Almost</div>' +
+        '<div class="sticker">Almost</div>' +
         '<h1>Could not send automatically</h1>' +
         '<div class="err">No dramas, nothing is lost. Hit the copy button below, then paste it into an email or text back to whoever sent you this link.</div>' +
         '<textarea class="codebox" id="codeBox" readonly></textarea>' +
@@ -545,26 +645,22 @@ function renderDone(ok, payload){
 function refreshChrome(){
   var pct = 0, crumb = "Let's begin", nextLabel = "Start", canNext = true;
   if(step === -1){
-    canNext = !!(state.name.trim() && state.email.trim());
+    canNext = !!state.name.trim();
     nextLabel = "Start";
   } else if(step >= 0 && step < TOTAL){
-    pct = ((step + 1) / (TOTAL + 2)) * 100;
-    crumb = SECTIONS[QUESTIONS[step].sec].name + " &middot; " + (step + 1) + " of " + TOTAL;
-    nextLabel = "Next";
+    pct = ((step + 1) / (TOTAL + 1)) * 100;
+    crumb = SECTIONS[QUESTIONS[step].sec].name + " \u00b7 " + (step + 1) + " of " + TOTAL;
+    nextLabel = step === TOTAL - 1 ? "Review" : "Next";
   } else if(step === TOTAL){
-    pct = ((TOTAL + 1) / (TOTAL + 2)) * 100;
-    crumb = "Last one";
-    nextLabel = "Review";
-  } else if(step === TOTAL + 1){
     pct = 100; crumb = "Check it over"; nextLabel = "Send my answers";
   } else {
     pct = 100; crumb = "Done";
   }
   $("bar").style.width = pct + "%";
-  $("crumb").innerHTML = crumb;
+  $("crumb").textContent = crumb;
   $("who").textContent = step > -1 && state.name ? state.name : "";
   var nav = $("nav");
-  if(step >= TOTAL + 2){ nav.style.display = "none"; return; }
+  if(step >= TOTAL + 1){ nav.style.display = "none"; return; }
   nav.style.display = "";
   $("backBtn").style.display = step <= -1 ? "none" : "";
   $("nextBtn").textContent = nextLabel;
@@ -575,15 +671,13 @@ function render(){
   window.scrollTo(0,0);
   if(step === -1) renderIntro();
   else if(step >= 0 && step < TOTAL) renderQuestion(step);
-  else if(step === TOTAL) renderNotes();
-  else if(step === TOTAL + 1) renderReview();
+  else if(step === TOTAL) renderReview();
   refreshChrome();
   saveDraft();
 }
 
 function buildPayload(){
-  var flat = { name:state.name, email:state.email, phone:state.phone, notes:state.notes,
-               submitted: new Date().toISOString() };
+  var flat = { name:state.name, submitted:new Date().toISOString() };
   for(var i=0;i<QUESTIONS.length;i++){
     var q = QUESTIONS[i], a = state.answers[q.id] || {};
     var picked = q.type === "month" ? (a.month || "") : ((a.picked || []).join(" | "));
@@ -599,7 +693,7 @@ function send(){
   btn.disabled = true; btn.textContent = "Sending...";
   if(!ENDPOINT){
     state.sent = true; saveDraft();
-    step = TOTAL + 2; renderDone(false, payload); refreshChrome();
+    step = TOTAL + 1; renderDone(false, payload); refreshChrome();
     return;
   }
   fetch(ENDPOINT, {
@@ -610,16 +704,16 @@ function send(){
   }).then(function(){
     state.sent = true; saveDraft();
     try{ localStorage.removeItem(DRAFT_KEY); }catch(e){}
-    step = TOTAL + 2; renderDone(true, payload); refreshChrome();
+    step = TOTAL + 1; renderDone(true, payload); refreshChrome();
   }).catch(function(){
     state.sent = true; saveDraft();
-    step = TOTAL + 2; renderDone(false, payload); refreshChrome();
+    step = TOTAL + 1; renderDone(false, payload); refreshChrome();
   });
 }
 
 $("nextBtn").addEventListener("click", function(){
-  if(step === TOTAL + 1){ send(); return; }
-  if(step === -1 && !(state.name.trim() && state.email.trim())){ toast("Name and email first"); return; }
+  if(step === TOTAL){ send(); return; }
+  if(step === -1 && !state.name.trim()){ toast("Your name first"); return; }
   step++;
   render();
 });
