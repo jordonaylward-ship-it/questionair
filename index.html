@@ -670,9 +670,11 @@ function buildPayload(){
   var flat = { name:state.name, submitted:new Date().toISOString() };
   for(var i=0;i<QUESTIONS.length;i++){
     var q = QUESTIONS[i], a = state.answers[q.id] || {};
-    var picked = q.type === "month" ? (a.month || "") : ((a.picked || []).join(" | "));
-    flat[q.id + "_" + q.short.replace(/[^a-z0-9]+/gi,"_")] = picked;
-    flat[q.id + "_own_words"] = a.other || "";
+    var picked = q.type === "month" ? (a.month || "") : ((a.picked || []).join(", "));
+    var own = (a.other || "").trim();
+    var val = picked;
+    if(own) val += (val ? "\n\n" : "") + own;
+    flat[q.id] = val;
   }
   return flat;
 }
