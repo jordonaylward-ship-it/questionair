@@ -105,7 +105,7 @@ input[type=text],select{margin-bottom:14px}
    CONFIG · paste your Apps Script web app URL between the quotes
    It must end in /exec
    ══════════════════════════════════════════════════════════ */
-var ENDPOINT = "";
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbyk1VK9N0F7qeiTEeqGk_FQTdXixgj8w7ftfEUDjgWwp1qa1Yrh3DBQFSgHN_DgVqXn/exec";
 /* ══════════════════════════════════════════════════════════ */
 
 var DRAFT_KEY = "candidate_form_draft_v2";
@@ -514,16 +514,6 @@ function renderIntro(){
       '<div class="sticker">About ten minutes</div>' +
       '<h1>Before we have a chat, tell us a bit about you</h1>' +
       '<p class="hint">Twenty quick questions. No right answers, we just want a feel for how you work.</p>' +
-      '<h2>What the role looks like</h2>' +
-      '<ul class="facts">' +
-        '<li>Writing asset finance, working leads end to end</li>' +
-        '<li><b>Commission based, on your own ABN.</b> Not a salaried position</li>' +
-        '<li>A <b>weekly advance</b> while you get established, reviewed after the first month</li>' +
-        '<li>Leads are supplied</li>' +
-        '<li>Fully remote, with a weekly catch up</li>' +
-        '<li>No Cert IV yet is fine, you can study while you work</li>' +
-      '</ul>' +
-      '<p class="hint" style="margin-bottom:20px">If commission based work is not for you, no hard feelings, and thanks for your time.</p>' +
       '<label class="small" for="nameIn">Your full name</label>' +
       '<input type="text" id="nameIn" autocomplete="name" placeholder="First and last">' +
     '</div>';
